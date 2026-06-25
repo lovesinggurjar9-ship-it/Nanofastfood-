@@ -20,7 +20,7 @@ color:white;
 
 header{
 background:#000;
-padding:15px 40px;
+padding:15px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -30,19 +30,20 @@ z-index:1000;
 }
 
 .logo{
-font-size:30px;
+font-size:32px;
 font-weight:bold;
-color:#ff2e2e;
+color:#ff2d2d;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:0 15px;
+margin:0 10px;
+font-weight:bold;
 }
 
 .whatsapp-btn{
-background:#e63946;
+background:#ff2d2d;
 padding:12px 20px;
 border-radius:30px;
 color:white;
@@ -52,132 +53,162 @@ font-weight:bold;
 
 .hero{
 height:90vh;
-background:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1600') center/cover;
+background:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1400');
+background-size:cover;
+background-position:center;
 display:flex;
 align-items:center;
-padding:50px;
 }
 
-.hero-text{
-max-width:500px;
-background:rgba(0,0,0,0.6);
-padding:25px;
-border-radius:10px;
+.hero-content{
+background:rgba(0,0,0,0.55);
+padding:40px;
+margin-left:5%;
+border-radius:15px;
+max-width:550px;
 }
 
 .hero h1{
-font-size:60px;
-line-height:1.1;
+font-size:65px;
+line-height:1;
+margin-bottom:20px;
 }
 
-.red{
-color:#ff2e2e;
+.hero span{
+color:#ff2d2d;
 }
 
 .hero p{
-margin:20px 0;
-font-size:20px;
+font-size:28px;
+margin-bottom:25px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 25px;
-background:#e63946;
+background:#ff2d2d;
+padding:15px 30px;
 color:white;
 text-decoration:none;
-border-radius:8px;
-margin-right:10px;
+border-radius:10px;
+font-weight:bold;
 }
 
 .section-title{
 text-align:center;
-font-size:40px;
-margin:60px 0 30px;
+font-size:50px;
+margin:70px 0 40px;
 }
 
 .menu{
+padding:0 5% 70px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:20px 40px 60px;
+gap:25px;
 }
 
 .card{
-background:#111;
-border:1px solid #333;
-border-radius:12px;
+background:#151515;
+border-radius:15px;
 overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .card img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 }
 
 .card-content{
-padding:15px;
+padding:20px;
+}
+
+.card h3{
+margin-bottom:10px;
 }
 
 .price{
-color:#ff2e2e;
+color:#ff2d2d;
 font-size:24px;
 font-weight:bold;
 margin:10px 0;
 }
 
-.order-btn{
-display:inline-block;
-padding:10px 15px;
-border:1px solid white;
-border-radius:5px;
-color:white;
-text-decoration:none;
-}
-
 .about{
+padding:70px 5%;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:30px;
-padding:50px;
+gap:40px;
 align-items:center;
 }
 
 .about img{
 width:100%;
-border-radius:10px;
+border-radius:15px;
+}
+
+.about h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.about p{
+line-height:1.8;
+font-size:18px;
 }
 
 .contact{
-padding:50px;
+padding:70px 5%;
 text-align:center;
 background:#111;
 }
 
+.contact h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.contact p{
+font-size:20px;
+margin:10px 0;
+}
+
 footer{
-background:black;
+background:#000;
+padding:25px;
 text-align:center;
-padding:20px;
-margin-top:20px;
 }
 
 @media(max-width:768px){
 
 header{
 flex-direction:column;
+gap:15px;
 }
 
 .hero{
 height:auto;
-padding:30px;
+padding:80px 0;
 }
 
 .hero h1{
-font-size:40px;
+font-size:48px;
+}
+
+.hero p{
+font-size:20px;
 }
 
 .about{
 grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:38px;
 }
 }
 </style>
@@ -190,41 +221,33 @@ grid-template-columns:1fr;
 
 <nav>
 <a href="#">Home</a>
-<a href="#menu">Menu</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+<a href="#">Menu</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
 </nav>
 
-<a class="whatsapp-btn" href="https://wa.me/919799765187">
+<a class="whatsapp-btn"
+href="https://wa.me/919799765187">
 Order on WhatsApp
 </a>
 </header>
 
 <section class="hero">
 
-<div class="hero-text">
+<div class="hero-content">
+<h1>FAST.<br>FRESH.<br><span>FLAVORFUL.</span></h1>
 
-<h1>
-FAST.<br>
-FRESH.<br>
-<span class="red">FLAVORFUL.</span>
-</h1>
+<p>Best burgers, pizza and fried chicken in New York.</p>
 
-<p>
-Best burgers, pizza and fried chicken in New York.
-</p>
-
-<a class="btn" href="https://wa.me/919799765187">
+<a class="btn"
+href="https://wa.me/919799765187">
 Order Now
 </a>
-
 </div>
 
 </section>
 
-<h2 class="section-title" id="menu">
-POPULAR MENU
-</h2>
+<h2 class="section-title">POPULAR MENU</h2>
 
 <section class="menu">
 
@@ -232,19 +255,8 @@ POPULAR MENU
 <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800">
 <div class="card-content">
 <h3>Classic Neno Burger</h3>
-<p>Juicy grilled burger.</p>
 <div class="price">$8.99</div>
-<a class="order-btn" href="#">Order Now</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=800">
-<div class="card-content">
-<h3>Double Cheese Burger</h3>
-<p>Loaded with cheese.</p>
-<div class="price">$11.99</div>
-<a class="order-btn" href="#">Order Now</a>
+<a class="btn" href="#">Order</a>
 </div>
 </div>
 
@@ -252,61 +264,54 @@ POPULAR MENU
 <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800">
 <div class="card-content">
 <h3>Margherita Pizza</h3>
-<p>Fresh mozzarella pizza.</p>
 <div class="price">$12.99</div>
-<a class="order-btn" href="#">Order Now</a>
+<a class="btn" href="#">Order</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800">
+<img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800">
 <div class="card-content">
-<h3>BBQ Chicken Pizza</h3>
-<p>BBQ sauce & chicken.</p>
-<div class="price">$16.99</div>
-<a class="order-btn" href="#">Order Now</a>
+<h3>Crispy Chicken</h3>
+<div class="price">$8.99</div>
+<a class="btn" href="#">Order</a>
 </div>
 </div>
 
 </section>
 
-<section class="about" id="about">
+<section class="about">
 
 <div>
-<h2>Made with Passion. Served with Love.</h2>
+<h2>Made With Passion</h2>
 
-<p style="margin-top:20px;">
-At Neno Fast Food, we serve delicious burgers,
-pizza and crispy fried chicken made fresh every day.
+<p>
+At Neno Fast Food, we serve high-quality burgers,
+pizzas and crispy chicken made fresh every day.
+Fast delivery, fresh ingredients and unforgettable taste.
 </p>
 </div>
 
-<div>
-<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200">
-</div>
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1000">
 
 </section>
 
-<section class="contact" id="contact">
+<section class="contact">
 
-<h2>Visit Us Today!</h2>
-
-<br>
+<h2>Visit Us Today</h2>
 
 <p>📍 431 W 16th St, New York, NY 10011</p>
 
 <p>📞 +91 97997 65187</p>
 
-<p>✉️ love@nenofastfood.com</p>
+<p>📧 love@nenofastfood.com</p>
 
 <p>🕒 11:00 AM - 11:00 PM</p>
 
 </section>
 
 <footer>
-
-© 2025 Neno Fast Food | All Rights Reserved
-
+© 2026 Neno Fast Food. All Rights Reserved.
 </footer>
 
 </body>
