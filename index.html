@@ -3,124 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neno Fast Food official</title>
+
+<title>Neno Fast Food | Fresh Burgers, Pizza & Fast Delivery</title>
+
+<meta name="description" content="Neno Fast Food serves fresh burgers, pizza, fries and more. Fast service, quality ingredients and great taste in New York.">
+<meta name="keywords" content="Neno Fast Food, Burger, Pizza, Fast Food, New York Food, Chicken Wings">
+<meta name="author" content="Neno Fast Food">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 }
 
 body{
 background:#111;
 color:white;
+line-height:1.6;
 }
 
 header{
 background:#000;
 padding:20px;
-text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
+text-align:center;
 font-size:32px;
 font-weight:bold;
 color:#ffcc00;
 }
 
 .hero{
+padding:80px 20px;
 text-align:center;
-padding:50px 20px;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('images/file_00000000357c7206b1eb8d5bb6e1adfb.png');
+background-size:cover;
+background-position:center;
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:10px;
+font-size:48px;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:18px;
+font-size:20px;
 color:#ddd;
+margin-bottom:25px;
 }
 
-.location{
-background:#222;
-padding:20px;
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#ffcc00;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+}
+
+.section{
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section h2{
 text-align:center;
-}
-
-.menu{
-padding:40px 20px;
-}
-
-.menu h2{
-text-align:center;
-margin-bottom:20px;
+margin-bottom:30px;
+font-size:34px;
+color:#ffcc00;
 }
 
 .menu-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.item{
+.card{
 background:#222;
-padding:20px;
-border-radius:10px;
+padding:25px;
+border-radius:12px;
 text-align:center;
 }
 
-.item h3{
+.card h3{
 color:#ffcc00;
 margin-bottom:10px;
 }
 
-.order{
-padding:40px 20px;
-background:#000;
-}
-
-.order h2{
+.about{
 text-align:center;
-margin-bottom:20px;
-}
-
-form{
-max-width:500px;
+max-width:900px;
 margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
+color:#ddd;
 }
 
-input,select,textarea{
-padding:12px;
-border:none;
-border-radius:6px;
-}
-
-button{
-padding:15px;
-background:#ffcc00;
-border:none;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.contact{
+.contact-box{
+background:#222;
+padding:25px;
+border-radius:12px;
 text-align:center;
-padding:30px;
+}
+
+iframe{
+width:100%;
+height:350px;
+border:none;
+border-radius:12px;
 }
 
 footer{
 background:#000;
-padding:20px;
+padding:25px;
 text-align:center;
+margin-top:40px;
 }
+
+footer a{
+color:#ffcc00;
+text-decoration:none;
+margin:0 10px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
 </style>
 </head>
 
@@ -132,218 +157,121 @@ text-align:center;
 
 <section class="hero">
 <h1>Fresh & Delicious Fast Food</h1>
-<p>Order your favorite meal online</p>
+<p>Serving tasty burgers, pizza, fries and more.</p>
+
+<a class="btn" href="https://t.me/Cherryjohan">
+Order on Telegram
+</a>
 </section>
 
-<section class="location">
-<h2>📍 Our Location</h2>
-<p>431 W 16th St, New York, NY 10011, USA</p>
+<section class="section">
+
+<h2>Our Location</h2>
+
+<div class="contact-box">
+📍 431 W 16th St, New York, NY 10011, USA
+</div>
+
 </section>
 
-<section class="menu">
-<h2>Our Menu</h2>
+<section class="section">
+
+<h2>Popular Menu</h2>
 
 <div class="menu-grid">
 
-<div class="item">
-<h3>Burger</h3>
+<div class="card">
+<h3>Classic Burger</h3>
 <p>$8.99</p>
 </div>
 
-<div class="item">
-<h3>Pizza</h3>
+<div class="card">
+<h3>Cheese Burger</h3>
+<p>$9.99</p>
+</div>
+
+<div class="card">
+<h3>Margherita Pizza</h3>
 <p>$12.99</p>
 </div>
 
-<div class="item">
-<h3>French Fries</h3>
-<p>$4.99</p>
-</div>
-
-<div class="item">
+<div class="card">
 <h3>Chicken Wings</h3>
 <p>$10.99</p>
 </div>
 
+<div class="card">
+<h3>French Fries</h3>
+<p>$4.99</p>
 </div>
-</section>
 
-<section class="order">
-<h2>Place Your Order</h2>
+<div class="card">
+<h3>Cold Drinks</h3>
+<p>$2.99</p>
+</div>
 
-<form>
-<input type="text" placeholder="Your Name" required>
-
-<input type="tel" placeholder="Phone Number" required>
-
-<select required>
-<option>Select Food Item</option>
-<option>Burger</option>
-<option>Pizza</option>
-<option>French Fries</option>
-<option>Chicken Wings</option>
-</select><option>Veg Burger</option>
-<option>Cheese Burger</option>
-<option>Double Burger</option>
-<option>Chicken Burger</option>
-
-<option>Margherita Pizza</option>
-<option>Farmhouse Pizza</option>
-<option>Cheese Pizza</option>
-
-<option>French Fries</option>
-<option>Peri Peri Fries</option>
-
-<option>Hot Dog</option>
-<option>Chicken Roll</option>
-<option>Veg Roll</option>
-
-<option>Chicken Nuggets</option>
-<option>Chicken Wings</option>
-
-<option>Sandwich</option>
-<option>Club Sandwich</option>
-
-<option>Taco</option>
-<option>Pasta</option>
-
-<option>Coke</option>
-<option>Pepsi</option>
-<option>Sprite</option>
-<option>Fanta</option>
-<option>Mountain Dew</option>
-
-<option>Cold Coffee</option>
-<option>Chocolate Shake</option>
-<option>Vanilla Shake</option>
-<option>Mango Shake</option>
-
-<input type="number" placeholder="Quantity">
-
-<textarea rows="4" placeholder="Delivery Address"></textarea>
-
-<button type="submit">Order Now</button>
-</form>
+</div>
 
 </section>
 
-<section class="contact">
-<h2>Contact Us</h2>
+<section class="section">
+
+<h2>About Us</h2>
+
+<div class="about">
+
+<p>
+Neno Fast Food is committed to serving fresh,
+delicious and affordable meals. Our goal is to
+deliver quality food with fast service and
+excellent customer satisfaction.
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Order Now</h2>
+
+<div class="contact-box">
+
 <p>📧 love@nenofastfood.com</p>
-<p>🌐 nenofastfood.com</p>
-<p>📞 +1 (555) 123-4567</p>
+
+<p>💬 Telegram: @Cherryjohan</p>
+
+<br>
+
+<a class="btn" href="https://t.me/Cherryjohan">
+Start Order
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Find Us</h2>
+
+<iframe
+src="https://maps.google.com/maps?q=431%20W%2016th%20St%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
 </section>
 
 <footer>
+
 <p>© 2026 Neno Fast Food. All Rights Reserved.</p>
+
+<br>
+
+<a href="#">Privacy Policy</a>
+<a href="#">Terms & Conditions</a>
+<a href="#">Refund Policy</a>
+
 </footer>
-<section id="orders" style="padding:40px 20px;text-align:center;">
-<h2>📦 My Orders</h2>
-<p>No orders available yet.</p>
-</section><section id="track" style="padding:40px 20px;text-align:center;">
-<h2>🚚 Track Order</h2>
 
-<input
-type="text"
-placeholder="Enter Order ID"
-style="padding:10px;width:250px;border-radius:5px;border:none;">
-
-<br><br>
-
-<button style="padding:10px 20px;background:#ffcc00;border:none;border-radius:5px;">
-Track Now
-</button>
-
-<p style="margin-top:15px;">Order tracking feature coming soon.</p>
-</section><section id="profile" style="padding:40px 20px;text-align:center;">
-
-<h2>👤 My Profile</h2>
-
-<p>Name: Guest User</p>
-
-<p>Email: love@nenofastfood.com</p>
-
-<p>Member Since: 2026</p>
-
-<button style="padding:10px 20px;background:#ffcc00;border:none;border-radius:5px;">
-Edit Profile
-</button>
-
-</section><section id="cart" style="padding:40px 20px;text-align:center;">
-
-<h2>🛒 My Cart</h2>
-
-<p>Items in Cart: 0</p>
-
-<p>Total Amount: $0.00</p>
-
-<button style="padding:12px 25px;background:#ffcc00;border:none;border-radius:5px;">
-Checkout
-</button>
-
-</section><section id="history" style="padding:40px 20px;text-align:center;">
-
-<h2>📜 Order History</h2>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🍔 Burger x2 - Delivered
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🍕 Pizza x1 - Delivered
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🥤 Pepsi x3 - Delivered
-</div>
-
-</section><section id="prices" style="padding:40px 20px;text-align:center;">
-
-<h2>💰 Neno Fast Food Price List</h2>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🍔 Veg Burger - $5
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🧀 Cheese Burger - $7
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🍕 Pizza - $10
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🍟 French Fries - $4
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🌭 Hot Dog - $6
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-🥤 Coke / Pepsi - $2
-</div>
-
-<div style="background:#222;padding:15px;margin:10px;border-radius:10px;">
-☕ Cold Coffee - $4
-</div>
-
-</section><div style="text-align:center; margin:30px;">
-  <a href="https://wa.me/919799765187"
-     style="background:#25D366;
-            color:white;
-            padding:15px 30px;
-            text-decoration:none;
-            font-size:20px;
-            border-radius:10px;
-            font-weight:bold;">
-     Order Now
-  </a>
-</div><div style="text-align:center; padding:20px;">
-  <img src="images/file_00000000357c7206b1eb8d5bb6e1adfb.png"
-       alt="Neno Fast Food Menu"
-       style="width:100%; max-width:1200px; border-radius:10px;">
-</div>
 </body>
 </html>
