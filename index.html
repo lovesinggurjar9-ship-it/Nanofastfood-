@@ -3,155 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Neno Fast Food | Fresh Burgers, Pizza & Fast Delivery</title>
-  <link rel="icon" type="image/png" href="logo.png">
-
-<meta name="description" content="Neno Fast Food serves fresh burgers, pizza, fries and more. Fast service, quality ingredients and great taste in New York.">
-<meta name="keywords" content="Neno Fast Food, Burger, Pizza, Fast Food, New York Food, Chicken Wings">
-<meta name="author" content="Neno Fast Food">
+<title>Neno Fast Food</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
 body{
-background:#111;
-color:white;
-line-height:1.6;
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
+color:#fff;
 }
 
 header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
 background:#000;
-padding:20px;
 position:sticky;
 top:0;
 z-index:1000;
 }
 
 .logo{
-text-align:center;
-font-size:32px;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:20px;
 font-weight:bold;
 color:#ffcc00;
 }
 
-.hero{
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('images/file_00000000357c7206b1eb8d5bb6e1adfb.png');
-background-size:cover;
-background-position:center;
+nav a{
+color:#fff;
+margin:0 10px;
+text-decoration:none;
+font-size:14px;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:20px;
-color:#ddd;
-margin-bottom:25px;
+nav a:hover{
+color:#ffcc00;
 }
 
 .btn{
-display:inline-block;
-padding:15px 30px;
 background:#ffcc00;
 color:#000;
+padding:10px 15px;
+border-radius:25px;
 text-decoration:none;
 font-weight:bold;
-border-radius:8px;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:50px;
+background:url('banner.jpg') center/cover no-repeat;
+}
+
+.hero-text h1{
+font-size:50px;
+margin:0;
+}
+
+.hero-text span{
+color:red;
 }
 
 .section{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.section h2{
+padding:50px 20px;
 text-align:center;
-margin-bottom:30px;
-font-size:34px;
-color:#ffcc00;
 }
 
-.menu-grid{
+.menu{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
 .card{
-background:#222;
-padding:25px;
-border-radius:12px;
-text-align:center;
+background:#111;
+padding:15px;
+border-radius:10px;
 }
 
-.card h3{
-color:#ffcc00;
-margin-bottom:10px;
-}
-
-.about{
-text-align:center;
-max-width:900px;
-margin:auto;
-color:#ddd;
-}
-
-.contact-box{
-background:#222;
-padding:25px;
-border-radius:12px;
-text-align:center;
-}
-
-iframe{
+.card img{
 width:100%;
-height:350px;
-border:none;
-border-radius:12px;
+border-radius:10px;
 }
 
-footer{
-background:#000;
-padding:25px;
-text-align:center;
-margin-top:40px;
-}
-
-footer a{
+.price{
 color:#ffcc00;
+font-weight:bold;
+}
+
+.btn2{
+display:inline-block;
+margin-top:10px;
+background:red;
+color:#fff;
+padding:8px 12px;
+border-radius:5px;
 text-decoration:none;
-margin:0 10px;
 }
 
-@media(max-width:768px){
-
-.hero h1{
-font-size:34px;
+.about, .reviews{
+background:#111;
+padding:40px;
+margin-top:20px;
 }
 
-.hero p{
-font-size:18px;
+.footer{
+background:#000;
+padding:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
 
+.footer a{
+color:#fff;
+text-decoration:none;
+display:block;
+margin:5px 0;
 }
-.logo img{
-width:120px;
-height:auto;
-vertical-align:middle;
-margin-right:10px;
-border-radius:50%;
+
+.small{
+font-size:12px;
+color:#aaa;
+}
+
+.map iframe{
+width:100%;
+height:250px;
+border:0;
+border-radius:10px;
 }
 </style>
 </head>
@@ -159,127 +145,91 @@ border-radius:50%;
 <body>
 
 <header>
-<div class="logo">
-<img src="logo.png" alt="Neno Fast Food Logo">
-Neno Fast Food
-</div>
+<div class="logo">🍔 Neno Fast Food</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a class="btn" href="https://wa.me/919799765187" target="_blank">Order on WhatsApp</a>
 </header>
 
 <section class="hero">
-<h1>Fresh & Delicious Fast Food</h1>
-<p>Serving tasty burgers, pizza, fries and more.</p>
-
-<a class="btn" href="https://t.me/Cherryjohan">
-Order on Telegram
-</a>
-</section>
-
-<section class="section">
-
-<h2>Our Location</h2>
-
-<div class="contact-box">
-📍 431 W 16th St, New York, NY 10011, USA
+<div class="hero-text">
+<h1>FAST. <span>FRESH.</span> FLAVORFUL.</h1>
+<p>Best burgers, pizza and fast food</p>
+<a class="btn" href="https://wa.me/919799765187">Order Now</a>
 </div>
-
 </section>
 
-<section class="section">
-
+<section id="menu" class="section">
 <h2>Popular Menu</h2>
 
-<div class="menu-grid">
+<div class="menu">
 
 <div class="card">
-<h3>Classic Burger</h3>
-<p>$8.99</p>
-</div>
-
-<div class="card">
-<h3>Cheese Burger</h3>
-<p>$9.99</p>
+<h3>Burger</h3>
+<p class="price">₹89</p>
+<a class="btn2" href="https://wa.me/919799765187">Order</a>
 </div>
 
 <div class="card">
-<h3>Margherita Pizza</h3>
-<p>$12.99</p>
+<h3>Pizza</h3>
+<p class="price">₹149</p>
+<a class="btn2" href="https://wa.me/919799765187">Order</a>
 </div>
 
 <div class="card">
-<h3>Chicken Wings</h3>
-<p>$10.99</p>
-</div>
-
-<div class="card">
-<h3>French Fries</h3>
-<p>$4.99</p>
-</div>
-
-<div class="card">
-<h3>Cold Drinks</h3>
-<p>$2.99</p>
+<h3>Fries</h3>
+<p class="price">₹69</p>
+<a class="btn2" href="https://wa.me/919799765187">Order</a>
 </div>
 
 </div>
-
 </section>
 
-<section class="section">
-
+<section id="about" class="about">
 <h2>About Us</h2>
-
-<div class="about">
-
-<p>
-Neno Fast Food is committed to serving fresh,
-delicious and affordable meals. Our goal is to
-deliver quality food with fast service and
-excellent customer satisfaction.
-</p>
-
-</div>
-
+<p>We serve fresh, tasty and fast food made with love.</p>
 </section>
 
-<section class="section">
-
-<h2>Order Now</h2>
-
-<div class="contact-box">
-
-<p>📧 love@nenofastfood.com</p>
-
-<p>💬 Telegram: @Cherryjohan</p>
-
-<br>
-
-<a class="btn" href="https://t.me/Cherryjohan">
-Start Order
-</a>
-
-</div>
-
+<section class="section map">
+<h2>Our Location</h2>
+<iframe src="https://maps.google.com/maps?q=431%20W%2016th%20St%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
-<section class="section">
-
-<h2>Find Us</h2>
-
-<iframe
-src="https://maps.google.com/maps?q=431%20W%2016th%20St%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed">
-</iframe>
-
+<section id="contact" class="reviews">
+<h2>Contact</h2>
+<p>📞 +91 97997 65187</p>
+<p>📩 love@nenofastfood.com</p>
+<p>📍 431 W 16th St, New York</p>
+<p>📢 Telegram: @Cherryjohan</p>
 </section>
 
-<footer>
+<footer class="footer">
 
-<p>© 2026 Neno Fast Food. All Rights Reserved.</p>
-
-<br>
-
+<div>
+<h3>Links</h3>
 <a href="privacy.html">Privacy Policy</a>
 <a href="terms.html">Terms & Conditions</a>
 <a href="refund.html">Refund Policy</a>
+</div>
+
+<div>
+<h3>Social</h3>
+<a href="https://wa.me/919799765187">WhatsApp</a>
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+</div>
+
+<div class="small">
+© 2026 Neno Fast Food<br>
+All rights reserved
+</div>
+
 </footer>
 
 </body>
