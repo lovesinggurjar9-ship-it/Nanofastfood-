@@ -1,165 +1,252 @@
-/* ==========================================
-   NENO FAST FOOD
-   STYLE.CSS - PART 1
-========================================== */
+/* ===================================================
+   NENO FAST FOOD - ULTIMATE PREMIUM STYLE.CSS
+   Part 1
+=================================================== */
 
-*{
+/* ---------- Google Style Reset ---------- */
+
+*,
+*::before,
+*::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
+}
+
+:root{
+
+    --bg:#0b0b0b;
+    --surface:#171717;
+    --surface2:#202020;
+
+    --primary:#ffb703;
+    --secondary:#fb8500;
+
+    --text:#ffffff;
+    --muted:#cfcfcf;
+
+    --radius:22px;
+
+    --shadow:
+    0 12px 35px rgba(0,0,0,.35);
+
+    --goldShadow:
+    0 10px 30px rgba(255,183,3,.22);
+
 }
 
 body{
 
     font-family:'Poppins',sans-serif;
-    background:#0b0b0b;
-    color:#ffffff;
+
+    background:var(--bg);
+
+    color:var(--text);
+
     overflow-x:hidden;
+
+    line-height:1.6;
 
 }
 
 img{
 
-    max-width:100%;
     display:block;
+
+    width:100%;
 
 }
 
 a{
 
     text-decoration:none;
-    color:white;
+
+    color:inherit;
 
 }
 
 button{
 
     border:none;
+
     cursor:pointer;
-    transition:.3s;
+
+    font-family:inherit;
+
+    transition:.35s;
+
+}
+
+section{
+
+    padding:90px 8%;
 
 }
 
 .section-title{
 
     text-align:center;
-    font-size:40px;
-    margin:70px 0 40px;
+
+    font-size:42px;
+
     font-weight:700;
-    color:#ffffff;
+
+    margin-bottom:60px;
 
 }
 
-/* ===========================
-        HEADER
-=========================== */
+/* ===================================================
+   HEADER
+=================================================== */
 
 .header{
 
     position:fixed;
+
     top:0;
+
     left:0;
+
     width:100%;
 
+    padding:16px 8%;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
-    padding:18px 8%;
+    background:rgba(15,15,15,.75);
 
-    background:rgba(10,10,10,.95);
+    backdrop-filter:blur(18px);
 
-    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 
-    z-index:1000;
+    z-index:9999;
 
 }
 
 .logo{
 
     display:flex;
+
     align-items:center;
-    gap:12px;
+
+    gap:14px;
 
 }
 
 .logo img{
 
-    width:55px;
-    height:55px;
+    width:58px;
+
+    height:58px;
+
     border-radius:50%;
+
+    object-fit:cover;
 
 }
 
 .logo h2{
 
-    font-size:28px;
-    color:#ffb703;
+    font-size:30px;
+
+    color:var(--primary);
 
 }
-
-/* ===========================
-        NAVBAR
-=========================== */
 
 .navbar{
 
     display:flex;
-    gap:35px;
+
+    gap:32px;
 
 }
 
 .navbar a{
 
-    color:#fff;
-    font-size:17px;
-    font-weight:500;
+    position:relative;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
     transition:.3s;
 
 }
 
 .navbar a:hover{
 
-    color:#ffb703;
+    color:var(--primary);
 
 }
 
-/* ===========================
-      HEADER BUTTONS
-=========================== */
+.navbar a:hover::after{
+
+    width:100%;
+
+}
 
 .header-buttons{
 
     display:flex;
+
     gap:15px;
 
 }
 
 .header-buttons button{
 
-    padding:11px 22px;
+    padding:12px 22px;
 
-    background:#ffb703;
+    border-radius:40px;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
 
     color:#111;
 
-    border-radius:30px;
+    font-weight:700;
 
-    font-weight:600;
+    box-shadow:var(--goldShadow);
 
 }
 
 .header-buttons button:hover{
 
-    background:#fb8500;
-    transform:translateY(-2px);
+    transform:translateY(-3px) scale(1.03);
 
 }
 
-/* ===========================
-        HERO
-=========================== */
+/* ===================================================
+   HERO
+=================================================== */
 
 .hero{
 
@@ -173,42 +260,59 @@ button{
 
     text-align:center;
 
-    padding:120px 8%;
+    position:relative;
 
     background:url("images/banner.jpg")
-    center/cover;
+    center center/cover no-repeat;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.60));
 
 }
 
 .hero-content{
 
-    max-width:750px;
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    padding:20px;
 
 }
 
 .hero h1{
 
-    font-size:60px;
+    font-size:68px;
 
-    line-height:1.2;
+    line-height:1.15;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
 
 .hero p{
 
-    font-size:20px;
+    color:var(--muted);
 
-    color:#dddddd;
+    font-size:22px;
 
     margin-bottom:35px;
 
 }
-
-/* ===========================
-      SEARCH BOX
-=========================== */
 
 .search-box{
 
@@ -222,15 +326,17 @@ button{
 
 .search-box input{
 
-    width:430px;
+    width:500px;
 
-    padding:16px;
+    max-width:80vw;
+
+    padding:18px;
 
     border:none;
 
     outline:none;
 
-    border-radius:40px 0 0 40px;
+    border-radius:50px 0 0 50px;
 
     font-size:17px;
 
@@ -238,15 +344,14 @@ button{
 
 .search-box button{
 
-    width:70px;
+    width:75px;
 
-    background:#ffb703;
+    border-radius:0 50px 50px 0;
 
-    color:#111;
-
-    border-radius:0 40px 40px 0;
-
-    font-size:20px;
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
 
 }
 
@@ -254,34 +359,35 @@ button{
 
     display:inline-block;
 
-    padding:16px 34px;
+    padding:18px 42px;
 
-    background:#ffb703;
+    border-radius:50px;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
 
     color:#111;
 
-    border-radius:40px;
-
     font-weight:700;
 
-    transition:.3s;
+    box-shadow:var(--goldShadow);
 
 }
 
 .order-btn:hover{
 
-    background:#fb8500;
-
-    transform:scale(1.05);
+    transform:translateY(-4px);
 
 }
-/* ==========================================
-        CATEGORIES
-========================================== */
+/* ===================================================
+   CATEGORIES
+=================================================== */
 
 .categories{
 
-    padding:80px 8%;
+    background:#111;
 
 }
 
@@ -291,33 +397,45 @@ button{
 
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 
-    gap:25px;
+    gap:30px;
 
 }
 
 .category-card{
 
-    background:#161616;
+    background:rgba(255,255,255,.04);
 
-    border-radius:20px;
+    backdrop-filter:blur(14px);
 
-    padding:35px 20px;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:var(--radius);
+
+    padding:40px 20px;
 
     text-align:center;
 
-    transition:.35s;
+    transition:.4s;
 
-    cursor:pointer;
+    box-shadow:var(--shadow);
 
-    border:1px solid #262626;
+}
+
+.category-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--primary);
+
+    box-shadow:var(--goldShadow);
 
 }
 
 .category-card i{
 
-    font-size:55px;
+    font-size:60px;
 
-    color:#ffb703;
+    color:var(--primary);
 
     margin-bottom:18px;
 
@@ -327,27 +445,15 @@ button{
 
     font-size:22px;
 
-    font-weight:600;
-
 }
 
-.category-card:hover{
-
-    transform:translateY(-10px);
-
-    background:#202020;
-
-    box-shadow:0 15px 35px rgba(255,183,3,.18);
-
-}
-
-/* ==========================================
-        POPULAR MENU
-========================================== */
+/* ===================================================
+   POPULAR MENU
+=================================================== */
 
 .menu{
 
-    padding:80px 8%;
+    background:var(--bg);
 
 }
 
@@ -355,7 +461,7 @@ button{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 
     gap:35px;
 
@@ -363,93 +469,100 @@ button{
 
 .food-card{
 
-    background:#171717;
-
-    border-radius:22px;
-
     overflow:hidden;
 
-    transition:.35s;
+    border-radius:26px;
 
-    border:1px solid #2a2a2a;
+    background:var(--surface);
+
+    box-shadow:var(--shadow);
+
+    transition:.45s;
 
 }
 
 .food-card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
 
-    box-shadow:0 15px 35px rgba(255,183,3,.18);
+    box-shadow:var(--goldShadow);
 
 }
 
 .food-card img{
 
-    width:100%;
-
-    height:220px;
+    height:240px;
 
     object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.food-card:hover img{
+
+    transform:scale(1.08);
 
 }
 
 .food-card h3{
 
-    font-size:24px;
+    font-size:26px;
 
-    margin:18px;
+    padding:22px 22px 10px;
 
 }
 
 .price{
 
-    color:#ffb703;
+    color:var(--primary);
 
-    font-size:24px;
-
-    margin:0 18px 18px;
+    font-size:28px;
 
     font-weight:700;
+
+    padding:0 22px 20px;
 
 }
 
 .add-cart{
 
-    width:calc(100% - 36px);
+    width:calc(100% - 44px);
 
-    margin:0 18px 22px;
+    margin:0 22px 22px;
 
-    padding:15px;
+    padding:16px;
 
-    border-radius:35px;
-
-    background:#ffb703;
-
-    color:#111;
+    border-radius:50px;
 
     font-size:17px;
 
     font-weight:700;
 
-    transition:.3s;
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#111;
+
+    box-shadow:var(--goldShadow);
 
 }
 
 .add-cart:hover{
 
-    background:#fb8500;
-
-    transform:scale(1.03);
+    transform:translateY(-3px);
 
 }
 
-/* ==========================================
-        FEATURED SECTION
-========================================== */
+/* ===================================================
+   FEATURED
+=================================================== */
 
 .featured{
 
-    padding:80px 8%;
+    background:#101010;
 
 }
 
@@ -457,7 +570,7 @@ button{
 
     display:grid;
 
-    gap:35px;
+    gap:40px;
 
 }
 
@@ -469,80 +582,24 @@ button{
 
     align-items:center;
 
-    background:#171717;
-
-    border-radius:22px;
-
     overflow:hidden;
 
-    border:1px solid #2b2b2b;
+    border-radius:30px;
 
-    transition:.35s;
+    background:rgba(255,255,255,.05);
 
-}
+    backdrop-filter:blur(18px);
 
-.featured-card:hover{
+    border:1px solid rgba(255,255,255,.08);
 
-    box-shadow:0 18px 40px rgba(255,183,3,.18);
-
-}
-
-.featured-card img{
-
-    width:380px;
-
-    height:260px;
-
-    object-fit:cover;
-
-}
-
-.featured-info{
-
-    flex:1;
-
-    padding:35px;
-
-}
-
-.featured-info h3{
-
-    font-size:32px;
-
-    margin-bottom:15px;
-
-}
-
-.featured-info p{
-
-    color:#d8d8d8;
-
-    line-height:1.8;
-
-    margin-bottom:18px;
-
-}
-
-.featured-info span{
-
-    display:block;
-
-    color:#ffb703;
-
-    font-size:30px;
-
-    font-weight:700;
-
-    margin-bottom:18px;
-
-}
-/* ==========================================
-        OFFERS SECTION
-========================================== */
+    box-shadow:var(--
+                   /* ===================================================
+   SPECIAL OFFERS
+=================================================== */
 
 .offers{
 
-    padding:80px 8%;
+    background:#111;
 
 }
 
@@ -550,7 +607,7 @@ button{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
     gap:30px;
 
@@ -558,31 +615,31 @@ button{
 
 .offer-card{
 
+    padding:40px 30px;
+
+    text-align:center;
+
+    border-radius:28px;
+
     background:linear-gradient(135deg,#ffb703,#fb8500);
 
     color:#111;
 
-    padding:35px;
+    box-shadow:var(--goldShadow);
 
-    border-radius:20px;
-
-    text-align:center;
-
-    transition:.35s;
+    transition:.45s;
 
 }
 
 .offer-card:hover{
 
-    transform:translateY(-10px);
-
-    box-shadow:0 15px 35px rgba(255,183,3,.30);
+    transform:translateY(-12px) scale(1.03);
 
 }
 
 .offer-card h3{
 
-    font-size:28px;
+    font-size:30px;
 
     margin-bottom:15px;
 
@@ -590,19 +647,19 @@ button{
 
 .offer-card p{
 
-    font-size:17px;
+    font-size:18px;
 
     font-weight:500;
 
 }
 
-/* ==========================================
-        WHY CHOOSE US
-========================================== */
+/* ===================================================
+   WHY CHOOSE US
+=================================================== */
 
 .why-us{
 
-    padding:80px 8%;
+    background:var(--bg);
 
 }
 
@@ -618,17 +675,19 @@ button{
 
 .why-box{
 
-    background:#171717;
+    background:rgba(255,255,255,.04);
 
-    padding:35px;
+    backdrop-filter:blur(16px);
 
-    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:26px;
+
+    padding:40px 25px;
 
     text-align:center;
 
-    border:1px solid #292929;
-
-    transition:.35s;
+    transition:.45s;
 
 }
 
@@ -636,15 +695,15 @@ button{
 
     transform:translateY(-10px);
 
-    box-shadow:0 15px 35px rgba(255,183,3,.18);
+    box-shadow:var(--goldShadow);
 
 }
 
 .why-box i{
 
-    font-size:55px;
+    font-size:58px;
 
-    color:#ffb703;
+    color:var(--primary);
 
     margin-bottom:20px;
 
@@ -652,249 +711,87 @@ button{
 
 .why-box h3{
 
-    margin-bottom:15px;
+    font-size:25px;
 
-    font-size:24px;
+    margin-bottom:15px;
 
 }
 
 .why-box p{
 
-    color:#cccccc;
+    color:var(--muted);
 
-    line-height:1.7;
+    line-height:1.8;
 
 }
 
-/* ==========================================
-        ABOUT SECTION
-========================================== */
+/* ===================================================
+   ABOUT
+=================================================== */
 
 .about{
 
-    display:flex;
-
-    flex-wrap:wrap;
-
-    align-items:center;
-
-    gap:50px;
-
-    padding:90px 8%;
-
-}
-
-.about-image{
-
-    flex:1;
-
-}
-
-.about-image img{
-
-    width:100%;
-
-    border-radius:25px;
-
-}
-
-.about-content{
-
-    flex:1;
-
-}
-
-.about-content h2{
-
-    font-size:42px;
-
-    margin-bottom:20px;
-
-}
-
-.about-content p{
-
-    color:#cccccc;
-
-    line-height:1.9;
-
-    margin-bottom:20px;
-
-}
-
-.about-btn{
-
-    display:inline-block;
-
-    padding:15px 35px;
-
-    background:#ffb703;
-
-    color:#111;
-
-    border-radius:35px;
-
-    font-weight:700;
-
-}
-
-.about-btn:hover{
-
-    background:#fb8500;
-
-}
-
-/* ==========================================
-        CONTACT SECTION
-========================================== */
-
-.contact{
-
-    padding:90px 8%;
-
-}
-
-.contact-container{
-
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-
-    gap:40px;
-
-}
-
-.contact-info{
-
-    background:#171717;
-
-    padding:35px;
-
-    border-radius:20px;
-
-}
-
-.contact-info h3{
-
-    margin-bottom:20px;
-
-    font-size:30px;
-
-}
-
-.contact-info p{
-
-    margin-bottom:18px;
-
-    color:#cccccc;
-
-}
-
-.contact-info i{
-
-    color:#ffb703;
-
-    margin-right:10px;
-
-}
-
-.contact-form{
-
-    background:#171717;
-
-    padding:35px;
-
-    border-radius:20px;
-
-}
-
-.contact-form input,
-.contact-form textarea{
-
-    width:100%;
-
-    padding:16px;
-
-    margin-bottom:18px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#262626;
-
-    color:#fff;
-
-}
-
-.contact-form button{
-
-    width:100%;
-
-    padding:16px;
-
-    background:#ffb703;
-
-    color:#111;
-
-    font-weight:700;
-
-    border-radius:35px;
-
-}
-
-.contact-form button:hover{
-
-    background:#fb8500;
-
-}
-
-/* ==========================================
-        GOOGLE MAP
-========================================== */
-
-.map{
-
-    padding:0 8% 90px;
-
-}
-
-.map iframe{
-
-    border-radius:20px;
-
-}
-/* ==========================================
-        LOGIN MODAL
-========================================== */
+    grid
+   /* ===================================================
+   LOGIN MODAL
+=================================================== */
 
 .login-modal{
 
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.75);
 
     display:none;
 
     justify-content:center;
     align-items:center;
 
-    z-index:5000;
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(10px);
+
+    z-index:10000;
 
 }
 
 .login-box{
 
-    width:420px;
-    max-width:90%;
+    width:430px;
+    max-width:92%;
 
-    background:#171717;
+    background:var(--surface);
 
-    padding:35px;
+    border-radius:30px;
 
-    border-radius:20px;
+    padding:40px;
 
     position:relative;
+
+    box-shadow:var(--shadow);
+
+    animation:popup .35s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
 
 }
 
@@ -902,20 +799,33 @@ button{
 
     position:absolute;
 
-    top:15px;
     right:20px;
 
-    font-size:30px;
+    top:15px;
+
+    font-size:34px;
 
     cursor:pointer;
+
+    color:var(--primary);
 
 }
 
 .login-box h2{
 
-    margin-bottom:20px;
+    text-align:center;
+
+    margin-bottom:10px;
+
+}
+
+.login-box p{
 
     text-align:center;
+
+    color:var(--muted);
+
+    margin-bottom:25px;
 
 }
 
@@ -923,15 +833,15 @@ button{
 
     width:100%;
 
-    padding:15px;
+    padding:17px;
 
     margin-bottom:18px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    background:#262626;
+    background:#252525;
 
     color:#fff;
 
@@ -941,11 +851,14 @@ button{
 
     width:100%;
 
-    padding:15px;
+    padding:18px;
 
-    border-radius:35px;
+    border-radius:50px;
 
-    background:#ffb703;
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
 
     color:#111;
 
@@ -953,15 +866,9 @@ button{
 
 }
 
-.login-box button:hover{
-
-    background:#fb8500;
-
-}
-
-/* ==========================================
-        CART SIDEBAR
-========================================== */
+/* ===================================================
+   CART SIDEBAR
+=================================================== */
 
 .cart-sidebar{
 
@@ -969,21 +876,23 @@ button{
 
     top:0;
 
-    right:-420px;
+    right:-430px;
 
-    width:400px;
+    width:420px;
 
     max-width:100%;
 
-    height:100%;
+    height:100vh;
 
-    background:#171717;
+    background:#121212;
 
-    transition:.4s;
+    z-index:9999;
 
-    z-index:4000;
+    transition:.45s;
 
     overflow-y:auto;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,.35);
 
 }
 
@@ -997,13 +906,19 @@ button{
 
     padding:25px;
 
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #2d2d2d;
+
+}
+
+.cart-header h2{
+
+    color:var(--primary);
 
 }
 
 #closeCart{
 
-    font-size:30px;
+    font-size:32px;
 
     cursor:pointer;
 
@@ -1013,13 +928,23 @@ button{
 
     padding:20px;
 
+    min-height:250px;
+
 }
 
 .cart-footer{
 
     padding:25px;
 
-    border-top:1px solid #333;
+    border-top:1px solid #2d2d2d;
+
+}
+
+.cart-footer h3{
+
+    display:flex;
+
+    justify-content:space-between;
 
 }
 
@@ -1027,321 +952,183 @@ button{
 
     width:100%;
 
-    padding:15px;
+    margin-top:18px;
 
-    margin-top:15px;
+    padding:18px;
 
-    background:#ffb703;
+    border-radius:50px;
+   /* ===================================================
+   FINAL PREMIUM EFFECTS
+=================================================== */
 
+/* Smooth Fade */
+html{
+    scroll-padding-top:90px;
+}
+
+/* Text Selection */
+::selection{
+    background:var(--primary);
     color:#111;
+}
 
-    border-radius:35px;
+/* Visible Focus */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus{
+    outline:2px solid var(--primary);
+    outline-offset:3px;
+}
 
-    font-weight:700;
+/* Loading Animation */
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
 
 }
 
-/* ==========================================
-        CHECKOUT
-========================================== */
+/* Floating Cards */
 
-.checkout{
+.food-card:nth-child(odd),
+.category-card:nth-child(even){
 
-    padding:90px 8%;
-
-}
-
-.checkout form{
-
-    max-width:700px;
-
-    margin:auto;
+    animation:floatCard 5s ease-in-out infinite;
 
 }
 
-.checkout input,
-.checkout textarea{
+.food-card:nth-child(even),
+.category-card:nth-child(odd){
 
-    width:100%;
-
-    padding:16px;
-
-    margin-bottom:18px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#262626;
-
-    color:#fff;
+    animation:floatCard 6s ease-in-out infinite;
 
 }
 
-.checkout button{
+/* Premium Glow */
 
-    width:100%;
+.food-card:hover,
+.category-card:hover,
+.featured-card:hover,
+.offer-card:hover,
+.why-box:hover{
 
-    padding:16px;
-
-    background:#ffb703;
-
-    color:#111;
-
-    border-radius:35px;
-
-    font-weight:700;
+    box-shadow:
+    0 15px 45px rgba(255,183,3,.35);
 
 }
 
-/* ==========================================
-        ORDER SUMMARY
-========================================== */
+/* Image Zoom */
 
-.order-summary{
+.food-card{
 
-    padding:80px 8%;
+    overflow:hidden;
 
 }
 
-.summary-box{
+.food-card img{
 
-    max-width:600px;
-
-    margin:auto;
-
-    background:#171717;
-
-    padding:35px;
-
-    border-radius:20px;
+    transition:.45s;
 
 }
 
-.summary-box p,
-.summary-box h3{
+.food-card:hover img{
 
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:15px;
+    transform:scale(1.08);
 
 }
 
-/* ==========================================
-        NEWSLETTER
-========================================== */
+/* Button Animation */
 
-.newsletter{
+.order-btn,
+.add-cart,
+.header-buttons button,
+.contact-form button,
+.checkout button,
+.newsletter-form button,
+.login-box button{
 
-    padding:90px 8%;
-
-    text-align:center;
-
-}
-
-.newsletter-form{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-
-    margin-top:30px;
+    transition:.35s;
 
 }
 
-.newsletter-form input{
+.order-btn:hover,
+.add-cart:hover,
+.header-buttons button:hover,
+.contact-form button:hover,
+.checkout button:hover,
+.newsletter-form button:hover,
+.login-box button:hover{
 
-    width:350px;
+    transform:translateY(-4px);
 
-    padding:16px;
-
-    border:none;
-
-    border-radius:40px;
-
-}
-
-.newsletter-form button{
-
-    padding:16px 35px;
-
-    border-radius:40px;
-
-    background:#ffb703;
-
-    color:#111;
-
-    font-weight:700;
+    filter:brightness(1.08);
 
 }
 
-/* ==========================================
-        FOOTER
-========================================== */
+/* Input Hover */
 
-.footer{
+input,
+textarea{
 
-    background:#111;
-
-    padding:70px 8% 40px;
+    transition:.3s;
 
 }
 
-.footer-container{
+input:hover,
+textarea:hover{
 
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-    gap:35px;
+    background:#303030;
 
 }
 
-.footer-box h2,
-.footer-box h3{
-
-    margin-bottom:18px;
-
-}
+/* Footer Animation */
 
 .footer-box a{
 
-    display:block;
-
-    margin-bottom:12px;
-
-    color:#ccc;
+    transition:.3s;
 
 }
 
 .footer-box a:hover{
 
-    color:#ffb703;
+    transform:translateX(6px);
 
 }
 
-.footer-box p{
+/* Better Paragraphs */
 
-    color:#ccc;
+p{
 
-    margin-bottom:12px;
-
-}
-
-.copyright{
-
-    background:#0b0b0b;
-
-    text-align:center;
-
-    padding:20px;
-
-    color:#999;
+    line-height:1.8;
 
 }
 
-/* ==========================================
-        RESPONSIVE
-========================================== */
+/* Premium Border */
 
-@media(max-width:991px){
+.food-card,
+.category-card,
+.featured-card,
+.offer-card,
+.why-box,
+.contact-info,
+.contact-form,
+.login-box,
+.summary-box{
 
-.header{
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-.navbar{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
+    border:1px solid rgba(255,255,255,.08);
 
 }
 
-.hero h1{
+/* Performance */
 
-    font-size:42px;
-
-}
-
-.search-box{
-
-    flex-direction:column;
-
-}
-
-.search-box input{
-
-    width:100%;
-
-    border-radius:40px;
-
-}
-
-.search-box button{
-
-    width:100%;
-
-    margin-top:12px;
-
-    border-radius:40px;
-
-}
-
-.featured-card{
-
-    flex-direction:column;
-
-}
-
-.featured-card img{
-
-    width:100%;
-
-}
-
-.cart-sidebar{
-
-    width:100%;
-
-}
-
-}
-
-@media(max-width:600px){
-
-.section-title{
-
-    font-size:30px;
-
-}
-
-.hero h1{
-
-    font-size:32px;
-
-}
-
-.hero p{
-
-    font-size:16px;
-
-}
-
-.logo h2{
-
-    font-size:22px;
-
-}
-
-}
+img{
