@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neno Fast Food</title>
-<link rel="icon" href="logo.png?v=3">
 
 <style>
 body{
@@ -19,7 +18,7 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 30px;
+padding:15px;
 background:#000;
 position:sticky;
 top:0;
@@ -27,126 +26,116 @@ z-index:1000;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-nav a{
-color:#fff;
-margin:0 10px;
-text-decoration:none;
-font-size:14px;
-}
-
-nav a:hover{
 color:#ffcc00;
-}
-
-/* BUTTON */
-.btn{
-background:#ffcc00;
-color:#000;
-padding:10px 15px;
-border-radius:25px;
-text-decoration:none;
+font-size:20px;
 font-weight:bold;
 }
 
-/* HERO */
-.hero{
+/* SEARCH */
+.search{
+text-align:center;
+padding:10px;
+}
+
+.search input{
+padding:10px;
+width:80%;
+border-radius:20px;
+border:none;
+outline:none;
+}
+
+/* CATEGORY */
+.categories{
 display:flex;
+gap:10px;
+padding:10px;
 justify-content:center;
-align-items:center;
-text-align:center;
-padding:100px 20px;
-min-height:450px;
-background:url('images/banner.jpg') center/cover no-repeat;
+flex-wrap:wrap;
 }
 
-.hero-text{
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:15px;
+.cat-btn{
+background:#111;
+color:#fff;
+padding:8px 12px;
+border-radius:20px;
+cursor:pointer;
+border:1px solid #333;
 }
 
-.hero-text h1{
-font-size:32px;
-margin:0;
-}
-
-.hero-text span{
-color:#ffcc00;
-}
-
-/* SECTION */
-.section{
-padding:50px 20px;
-text-align:center;
+.cat-btn:hover{
+background:#ffcc00;
+color:#000;
 }
 
 /* MENU */
 .menu{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+gap:15px;
+padding:20px;
 }
 
 .card{
 background:#111;
 padding:15px;
 border-radius:10px;
+text-align:center;
 }
 
 .card img{
 width:100%;
 border-radius:10px;
+height:120px;
+object-fit:cover;
 }
 
 .price{
 color:#ffcc00;
-font-weight:bold;
 font-size:18px;
+margin:10px 0;
 }
 
-.btn2{
-display:inline-block;
-margin-top:10px;
+/* BUTTONS */
+button{
+background:#ffcc00;
+border:none;
+padding:6px 10px;
+margin:3px;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.remove{
 background:red;
 color:#fff;
-padding:8px 12px;
-border-radius:5px;
-text-decoration:none;
 }
 
-/* ABOUT */
-.about{
-background:#111;
-padding:40px;
-margin-top:20px;
+/* CART */
+.cart-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ffcc00;
+color:#000;
+padding:12px 15px;
+border-radius:50px;
+font-weight:bold;
+cursor:pointer;
+z-index:2000;
 }
 
-/* CONTACT */
-.contact{
-background:#111;
-padding:40px;
-margin-top:20px;
-}
-
-/* FOOTER */
-.footer{
+.cart{
+position:fixed;
+right:20px;
+bottom:80px;
+width:300px;
 background:#000;
-padding:30px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.footer a{
-color:#fff;
-text-decoration:none;
-display:block;
-margin:5px 0;
+border:1px solid #333;
+padding:15px;
+border-radius:10px;
+display:none;
 }
 
 .small{
@@ -154,114 +143,145 @@ font-size:12px;
 color:#aaa;
 }
 
-/* MAP */
-.map iframe{
-width:100%;
-height:250px;
-border:0;
-border-radius:10px;
+input{
+padding:8px;
+width:90%;
+margin:5px 0;
+border-radius:5px;
+border:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-<div class="logo">
-<img src="logo.png?v=3" alt="Neno Fast Food Logo" style="height:60px;">
-</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#menu">Menu</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-
+<div class="logo">🍔 Neno Fast Food</div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-text">
-<h1>Welcome to <span>Neno Fast Food</span></h1>
-<p>Fresh Food • Fast Delivery • Best Taste</p>
-<a class="btn" href="https://wa.me/919799765187?text=I%20want%20to%20order%20food">Order Now</a>
+<!-- SEARCH -->
+<div class="search">
+<input type="text" id="searchBox" placeholder="Search food..." onkeyup="searchFood()">
 </div>
-</section>
+
+<!-- CATEGORY -->
+<div class="categories">
+<div class="cat-btn" onclick="filter('all')">All</div>
+<div class="cat-btn" onclick="filter('burger')">Burger</div>
+<div class="cat-btn" onclick="filter('pizza')">Pizza</div>
+<div class="cat-btn" onclick="filter('fries')">Fries</div>
+</div>
 
 <!-- MENU -->
-<section id="menu" class="section">
-<h2>Popular Menu</h2>
+<div class="menu" id="menu">
 
-<div class="menu">
-
-<div class="card">
+<div class="card" data-cat="burger">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
 <h3>Burger</h3>
 <p class="price">$1.07</p>
-<a class="btn2" href="https://wa.me/919799765187?text=I%20want%20Burger">Order</a>
+<button onclick="add('Burger',1.07)">Add</button>
 </div>
 
-<div class="card">
+<div class="card" data-cat="pizza">
+<img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9">
 <h3>Pizza</h3>
 <p class="price">$1.79</p>
-<a class="btn2" href="https://wa.me/919799765187?text=I%20want%20Pizza">Order</a>
+<button onclick="add('Pizza',1.79)">Add</button>
 </div>
 
-<div class="card">
+<div class="card" data-cat="fries">
+<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877">
 <h3>Fries</h3>
 <p class="price">$0.83</p>
-<a class="btn2" href="https://wa.me/919799765187?text=I%20want%20Fries">Order</a>
+<button onclick="add('Fries',0.83)">Add</button>
 </div>
 
 </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-<h2>About Us</h2>
-<p>We serve fresh, tasty and fast food made with love.</p>
-</section>
-
-<!-- MAP -->
-<section class="section map">
-<h2>Our Location</h2>
-<iframe src="https://maps.google.com/maps?q=431%20W%2016th%20St%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2>Contact</h2>
-<p>📞 +91 97997 65187</p>
-<p>📩 love@nenofastfood.com</p>
-<p>📍 431 W 16th St, New York</p>
-<p>📢 Telegram: <a href="https://t.me/Cherryjohan" target="_blank">@Cherryjohan</a></p>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-
-<div>
-<h3>Links</h3>
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms & Conditions</a>
-<a href="refund.html">Refund Policy</a>
+<!-- CART BUTTON -->
+<div class="cart-btn" onclick="toggleCart()">
+🛒 Cart (<span id="count">0</span>)
 </div>
 
-<div>
-<h3>Social</h3>
-<a href="https://wa.me/919799765187">WhatsApp</a>
-<a href="https://t.me/Cherryjohan">Telegram</a>
-<a href="#">Instagram</a>
-<a href="#">Facebook</a>
+<!-- CART -->
+<div class="cart" id="cartBox">
+<h3>Your Order</h3>
+<div id="items"></div>
+
+<input type="text" id="coupon" placeholder="Coupon code (SAVE10)">
+
+<p>Total: $<span id="total">0</span></p>
+<p>Final: $<span id="final">0</span></p>
+
+<button onclick="applyCoupon()">Apply Coupon</button>
+<button onclick="order()">Place Order</button>
+
+<p class="small">Delivery: $1 fixed</p>
 </div>
 
-<div class="small">
-© 2026 Neno Fast Food<br>
-All rights reserved
-</div>
+<script>
 
-</footer>
+let cart = [];
+let discount = 0;
+let delivery = 1;
 
-</body>
-</html>
+function add(name,price){
+
+let item = cart.find(i=>i.name===name);
+
+if(item){
+item.qty++;
+}else{
+cart.push({name,price,qty:1});
+}
+
+update();
+}
+
+function removeItem(name){
+cart = cart.filter(i=>i.name!==name);
+update();
+}
+
+function update(){
+
+let items = document.getElementById("items");
+let total = 0;
+let count = 0;
+
+items.innerHTML = "";
+
+cart.forEach(i=>{
+total += i.price*i.qty;
+count += i.qty;
+
+items.innerHTML += `
+<p>
+${i.name} x ${i.qty}
+<button class="remove" onclick="removeItem('${i.name}')">X</button>
+</p>`;
+});
+
+let final = total + delivery - discount;
+
+document.getElementById("total").innerText = total.toFixed(2);
+document.getElementById("final").innerText = final.toFixed(2);
+document.getElementById("count").innerText = count;
+}
+
+function toggleCart(){
+let box = document.getElementById("cartBox");
+box.style.display = box.style.display==="block"?"none":"block";
+}
+
+function applyCoupon(){
+let code = document.getElementById("coupon").value;
+
+if(code==="SAVE10"){
+discount = 1;
+alert("Coupon Applied!");
+}else{
+alert("Invalid Coupon");
+}
+
+update
