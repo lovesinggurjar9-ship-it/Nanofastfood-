@@ -31,6 +31,17 @@ font-size:20px;
 font-weight:bold;
 }
 
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:#111;
+}
+
+.hero h1 span{
+color:#ffcc00;
+}
+
 /* SEARCH */
 .search{
 text-align:center;
@@ -96,20 +107,14 @@ font-size:18px;
 margin:10px 0;
 }
 
-/* BUTTONS */
+/* BUTTON */
 button{
 background:#ffcc00;
 border:none;
 padding:6px 10px;
-margin:3px;
 border-radius:5px;
 cursor:pointer;
 font-weight:bold;
-}
-
-.remove{
-background:red;
-color:#fff;
 }
 
 /* CART */
@@ -138,17 +143,14 @@ border-radius:10px;
 display:none;
 }
 
+.remove{
+background:red;
+color:#fff;
+}
+
 .small{
 font-size:12px;
 color:#aaa;
-}
-
-input{
-padding:8px;
-width:90%;
-margin:5px 0;
-border-radius:5px;
-border:none;
 }
 </style>
 </head>
@@ -158,6 +160,12 @@ border:none;
 <header>
 <div class="logo">🍔 Neno Fast Food</div>
 </header>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Welcome to <span>Neno Fast Food</span></h1>
+<p>Fresh Food • Fast Delivery • Best Taste</p>
+</div>
 
 <!-- SEARCH -->
 <div class="search">
@@ -207,39 +215,19 @@ border:none;
 <div class="cart" id="cartBox">
 <h3>Your Order</h3>
 <div id="items"></div>
-
-<input type="text" id="coupon" placeholder="Coupon code (SAVE10)">
-
 <p>Total: $<span id="total">0</span></p>
-<p>Final: $<span id="final">0</span></p>
-
-<button onclick="applyCoupon()">Apply Coupon</button>
 <button onclick="order()">Place Order</button>
-
-<p class="small">Delivery: $1 fixed</p>
+<p class="small">Order will go to WhatsApp</p>
 </div>
 
 <script>
 
 let cart = [];
-let discount = 0;
-let delivery = 1;
 
 function add(name,price){
-
 let item = cart.find(i=>i.name===name);
-
-if(item){
-item.qty++;
-}else{
-cart.push({name,price,qty:1});
-}
-
-update();
-}
-
-function removeItem(name){
-cart = cart.filter(i=>i.name!==name);
+if(item){ item.qty++; }
+else{ cart.push({name,price,qty:1}); }
 update();
 }
 
@@ -262,11 +250,13 @@ ${i.name} x ${i.qty}
 </p>`;
 });
 
-let final = total + delivery - discount;
-
 document.getElementById("total").innerText = total.toFixed(2);
-document.getElementById("final").innerText = final.toFixed(2);
 document.getElementById("count").innerText = count;
+}
+
+function removeItem(name){
+cart = cart.filter(i=>i.name!==name);
+update();
 }
 
 function toggleCart(){
@@ -274,14 +264,37 @@ let box = document.getElementById("cartBox");
 box.style.display = box.style.display==="block"?"none":"block";
 }
 
-function applyCoupon(){
-let code = document.getElementById("coupon").value;
+function order(){
 
-if(code==="SAVE10"){
-discount = 1;
-alert("Coupon Applied!");
-}else{
-alert("Invalid Coupon");
+let msg = "🍔 Order from Neno Fast Food:%0A%0A";
+let total = 0;
+
+cart.forEach(i=>{
+msg += `${i.name} x ${i.qty} = $${(i.price*i.qty).toFixed(2)}%0A`;
+total += i.price*i.qty;
+});
+
+msg += `%0ATotal: $${total.toFixed(2)}`;
+
+window.open("https://wa.me/919799765187?text="+msg,"_blank");
 }
 
-update
+function filter(cat){
+let cards = document.querySelectorAll(".card");
+cards.forEach(c=>{
+c.style.display = (cat==="all" || c.dataset.cat===cat) ? "block":"none";
+});
+}
+
+function searchFood(){
+let val = document.getElementById("searchBox").value.toLowerCase();
+document.querySelectorAll(".card").forEach(c=>{
+let name = c.querySelector("h3").innerText.toLowerCase();
+c.style.display = name.includes(val) ? "block":"none";
+});
+}
+
+</script>
+
+</body>
+</html>
