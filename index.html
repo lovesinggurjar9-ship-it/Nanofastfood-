@@ -1,1 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Neno Fast Food</title>
+
+<meta name="description" content="Neno Fast Food - Fresh Burgers, Pizza, Fries and More.">
+
+<meta name="keywords" content="Fast Food, Burger, Pizza, Fries, Restaurant">
+
+<meta name="author" content="Neno Fast Food">
+
+<link rel="icon" href="logo.png">
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+
+<img src="logo.png" alt="Neno Fast Food Logo">
+
+<h2>Neno Fast Food</h2>
+
+</div>
+
+<nav class="navbar">
+
+<a href="#home">Home</a>
+
+<a href="#menu">Menu</a>
+
+<a href="#offers">Offers</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="header-buttons">
+
+<button id="loginBtn">
+
+<i class="fa-solid fa-user"></i>
+
+Login
+
+</button>
+
+<button id="cartBtn">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Cart
+
+<span id="cartCount">0</span>
+
+</button>
+
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Fresh & Delicious Food Delivered Fast</h1>
+
+<p>
+
+Enjoy Hot Burgers, Crispy Fries, Pizza,
+
+Cold Drinks and More.
+
+</p>
+
+<div class="search-box">
+
+<input
+type="text"
+placeholder="Search your favourite food...">
+
+<button>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+</div>
+
+<a href="#menu" class="order-btn">
+
+Order Now
+
+</a>
+
+</div>
+
+</section>
+<!-- =========================
+     CATEGORIES SECTION
+========================= -->
+
+<section class="categories">
+
+    <h2 class="section-title">
+        Food Categories
+    </h2>
+
+    <div class="category-container">
+
+        <div class="category-card">
+            <i class="fa-solid fa-burger"></i>
+            <h3>Burgers</h3>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-pizza-slice"></i>
+            <h3>Pizza</h3>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-drumstick-bite"></i>
+            <h3>Chicken</h3>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-ice-cream"></i>
+            <h3>Desserts</h3>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-mug-hot"></i>
+            <h3>Coffee</h3>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-glass-water"></i>
+            <h3>Drinks</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     POPULAR MENU
+========================= -->
+
+<section class="menu" id="menu">
+
+    <h2 class="section-title">
+        Popular Menu
+    </h2>
+
+    <div class="menu-container">
+
+        <div class="food-card">
+
+            <img src="images/burger.jpg" alt="Burger">
+
+            <h3>Classic Burger</h3>
+
+            <p class="price">$1.07</p>
+
+            <button class="add-cart"
+                data-name="Classic Burger"
+                data-price="1.07">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <img src="images/pizza.jpg" alt="Pizza">
+
+            <h3>Cheese Pizza</h3>
+
+            <p class="price">$1.79</p>
+
+            <button class="add-cart"
+                data-name="Cheese Pizza"
+                data-price="1.79">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <img src="images/fries.jpg" alt="Fries">
+
+            <h3>French Fries</h3>
+
+            <p class="price">$0.83</p>
+
+            <button class="add-cart"
+                data-name="French Fries"
+                data-price="0.83">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     FEATURED FOODS SECTION
+========================================== -->
+
+<section class="featured" id="featured">
+
+    <h2 class="section-title">
+        Featured Foods
+    </h2>
+
+    <div class="featured-container">
+
+        <div class="featured-card">
+
+            <img src="images/featured-burger.jpg" alt="Burger">
+
+            <div class="featured-info">
+
+                <h3>Double Cheese Burger</h3>
+
+                <p>
+                    Loaded with cheese, fresh vegetables,
+                    crispy patty and special Neno Sauce.
+                </p>
+
+                <span>$2.49</span>
+
+                <button class="add-cart"
+                    data-name="Double Cheese Burger"
+                    data-price="2.49">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="featured-card">
+
+            <img src="images/featured-pizza.jpg" alt="Pizza">
+
+            <div class="featured-info">
+
+                <h3>Special Pizza</h3>
+
+                <p>
+                    Delicious Italian Pizza with
+                    extra cheese and fresh toppings.
+                </p>
+
+                <span>$3.29</span>
+
+                <button class="add-cart"
+                    data-name="Special Pizza"
+                    data-price="3.29">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     SPECIAL OFFERS
+========================================== -->
+
+<section class="offers" id="offers">
+
+    <h2 class="section-title">
+        Today's Offers
+    </h2>
+
+    <div class="offer-container">
+
+        <div class="offer-card">
+
+            <h3>🍔 Burger Combo</h3>
+
+            <p>Buy 1 Burger Get Fries Free</p>
+
+        </div>
+
+        <div class="offer-card">
+
+            <h3>🍕 Pizza Deal</h3>
+
+            <p>20% OFF on Large Pizza</p>
+
+        </div>
+
+        <div class="offer-card">
+
+            <h3>🥤 Cold Drinks</h3>
+
+            <p>Free Drink Above $10 Order</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     WHY CHOOSE US
+========================================== -->
+
+<section class="why-us">
+
+    <h2 class="section-title">
+        Why Choose Neno Fast Food
+    </h2>
+
+    <div class="why-container">
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+                Lightning fast delivery at your doorstep.
+            </p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-bowl-food"></i>
+
+            <h3>Fresh Food</h3>
+
+            <p>
+                Fresh ingredients prepared every day.
+            </p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h3>Top Quality</h3>
+
+            <p>
+                Premium quality food with best taste.
+            </p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>24/7 Support</h3>
+
+            <p>
+                Friendly customer support whenever you need us.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     ABOUT SECTION
+========================================== -->
+
+<section class="about" id="about">
+
+    <div class="about-image">
+
+        <img src="images/about.jpg" alt="About Neno Fast Food">
+
+    </div>
+
+    <div class="about-content">
+
+        <h2>About Neno Fast Food</h2>
+
+        <p>
+            Neno Fast Food serves fresh, delicious and high-quality fast food
+            prepared with premium ingredients. Our mission is to deliver tasty
+            meals quickly while maintaining the highest standards of quality and
+            customer satisfaction.
+        </p>
+
+        <p>
+            Every order is prepared with care to give you the best dining
+            experience at an affordable price.
+        </p>
+
+        <a href="#menu" class="about-btn">
+            Explore Menu
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CONTACT SECTION
+========================================== -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>Neno Fast Food</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                431 W 16th St, New York, NY 10011, USA
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                love@nenofastfood.com
+            </p>
+
+            <p>
+                <i class="fa-brands fa-telegram"></i>
+                @Cherryjohan
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +91 97997 65187
+            </p>
+
+        </div>
+
+        <div class="contact-form">
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required>
+
+                <textarea
+                    rows="6"
+                    placeholder="Write Your Message"></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     GOOGLE MAP
+========================================== -->
+
+<section class="map">
+
+<iframe
+src="https://www.google.com/maps?q=431%20W%2016th%20St,%20New%20York,%20NY%2010011&output=embed"
+width="100%"
+height="450"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</section>
+
+
+<!-- ==========================================
+     SOCIAL MEDIA
+========================================== -->
+
+<section class="social">
+
+<h2 class="section-title">
+Follow Us
+</h2>
+
+<div class="social-icons">
+
+<a href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+<a href="https://t.me/Cherryjohan">
+<i class="fab fa-telegram"></i>
+</a>
+
+</div>
+
+</section>
+<!-- ==========================================
+        LOGIN / SIGNUP MODAL
+========================================== -->
+
+<div class="login-modal" id="loginModal">
+
+    <div class="login-box">
+
+        <span class="close-login">&times;</span>
+
+        <h2>Welcome Back</h2>
+
+        <p>Login to continue your food journey.</p>
+
+        <form id="loginForm">
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                id="customerEmail"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Phone Number"
+                required>
+
+            <input
+                type="password"
+                id="customerPassword"
+                placeholder="Password"
+                required>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+        SHOPPING CART SIDEBAR
+========================================== -->
+
+<div class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <span id="closeCart">&times;</span>
+
+    </div>
+
+    <div id="cartItems">
+
+        <!-- Cart Items -->
+
+    </div>
+
+    <div class="cart-footer">
+
+        <h3>
+            Total :
+            <span id="cartTotal">
+                $0.00
+            </span>
+        </h3>
+
+        <button id="checkoutBtn">
+            Proceed To Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+        CHECKOUT FORM
+========================================== -->
+
+<section class="checkout" id="checkout">
+
+    <h2 class="section-title">
+        Delivery Details
+    </h2>
+
+    <form id="checkoutForm">
+
+        <input
+            type="text"
+            placeholder="Full Name"
+            required>
+
+        <input
+            type="tel"
+            placeholder="Mobile Number"
+            required>
+
+        <input
+            type="text"
+            placeholder="Complete Address"
+            required>
+
+        <textarea
+            rows="5"
+            placeholder="Delivery Instructions"></textarea>
+
+        <button type="submit">
+
+            Place Order
+
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- ==========================================
+        ORDER SUMMARY
+========================================== -->
+
+<section class="order-summary">
+
+    <h2 class="section-title">
+        Order Summary
+    </h2>
+
+    <div class="summary-box">
+
+        <p>
+
+            Items
+
+            <span id="summaryItems">
+
+                0
+
+            </span>
+
+        </p>
+
+        <p>
+
+            Delivery
+
+            <span>
+
+                Free
+
+            </span>
+
+        </p>
+
+        <p>
+
+            Tax
+
+            <span>
+
+                Included
+
+            </span>
+
+        </p>
+
+        <hr>
+
+        <h3>
+
+            Grand Total
+
+            <span id="grandTotal">
+
+                $0.00
+
+            </span>
+
+        </h3>
+
+    </div>
+
+</section>
+<!-- ==========================================
+        NEWSLETTER
+========================================== -->
+
+<section class="newsletter">
+
+    <div class="newsletter-container">
+
+        <h2>Subscribe To Our Newsletter</h2>
+
+        <p>
+            Get exclusive deals, offers and new menu updates directly in your inbox.
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Enter Your Email"
+                required>
+
+            <button type="submit">
+
+                Subscribe
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+        FOOTER
+========================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>Neno Fast Food</h2>
+
+            <p>
+
+                Fresh Food • Fast Delivery • Best Quality
+
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#offers">Offers</a>
+
+            <a href="#about">About</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Policies</h3>
+
+            <a href="privacy.html">
+
+                Privacy Policy
+
+            </a>
+
+            <a href="terms.html">
+
+                Terms & Conditions
+
+            </a>
+
+            <a href="refund.html">
+
+                Refund Policy
+
+            </a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>
+
+                📍 431 W 16th St,
+                New York, NY 10011
+
+            </p>
+
+            <p>
+
+                ✉ love@nenofastfood.com
+
+            </p>
+
+            <p>
+
+                📱 +91 97997 65187
+
+            </p>
+
+            <p>
+
+                Telegram :
+                @Cherryjohan
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==========================================
+        COPYRIGHT
+========================================== -->
+
+<div class="copyright">
+
+    © 2026 Neno Fast Food.
+    All Rights Reserved.
+
+</div>
+
+
+
+<!-- ==========================================
+        JAVASCRIPT
+========================================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
