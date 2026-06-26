@@ -1,300 +1,1110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Neno Fast Food</title>
 
+<link rel="icon" type="image/png" href="logo.png">
+
+<meta name="description" content="Neno Fast Food - Fresh Burgers, Pizza, Fries, Cold Drinks and Fast Delivery.">
+
+<meta name="keywords" content="Burger, Pizza, Fast Food, Restaurant, Delivery, Neno Fast Food">
+
+<meta name="author" content="Neno Fast Food">
+
 <style>
-body{
+*{
 margin:0;
-font-family:Arial;
-background:#0b0b0b;
-color:#fff;
+padding:0;
+box-sizing:border-box;
 }
 
-/* HEADER */
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+background:#0b0b0b;
+
+color:#fff;
+
+overflow-x:hidden;
+
+}
+  a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+  /* HEADER */
+
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-background:#000;
+
 position:sticky;
+
 top:0;
+
+left:0;
+
+width:100%;
+
+background:#000;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px 40px;
+
 z-index:1000;
+
+border-bottom:1px solid #222;
+
 }
 
 .logo{
-color:#ffcc00;
-font-size:20px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:26px;
+
 font-weight:bold;
-}
 
-/* HERO */
-.hero{
-text-align:center;
-padding:40px 20px;
-background:#111;
-}
-
-.hero h1 span{
 color:#ffcc00;
+
 }
 
-/* SEARCH */
-.search{
+.logo img{
+
+height:60px;
+
+width:auto;
+
+}
+
+nav{
+
+display:flex;
+
+gap:25px;
+
+}
+
+nav a{
+
+color:#fff;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+background:url("images/banner.jpg") center center/cover no-repeat;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
 text-align:center;
-padding:10px;
+
+position:relative;
+
+padding:20px;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.60);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:700px;
+
+}
+
+.hero h1{
+
+font-size:55px;
+
+color:#ffcc00;
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin-bottom:25px;
+
+line-height:1.6;
+
+}
+
+.hero .btn{
+
+display:inline-block;
+
+padding:14px 28px;
+
+background:#ffcc00;
+
+color:#000;
+
+font-weight:bold;
+
+border-radius:30px;
+
+transition:.3s;
+
+}
+
+.hero .btn:hover{
+/* SEARCH */
+
+.search{
+
+padding:35px 20px;
+
+background:#111;
+
+text-align:center;
+
 }
 
 .search input{
-padding:10px;
-width:80%;
-border-radius:20px;
+
+width:90%;
+
+max-width:600px;
+
+padding:15px 20px;
+
+font-size:17px;
+
 border:none;
+
+border-radius:35px;
+
 outline:none;
+
+background:#222;
+
+color:#fff;
+
+border:2px solid #333;
+
+transition:.3s;
+
 }
 
-/* CATEGORY */
+.search input:focus{
+
+border-color:#ffcc00;
+
+}
+
+/* CATEGORIES */
+
 .categories{
+
 display:flex;
-gap:10px;
-padding:10px;
+
 justify-content:center;
+
 flex-wrap:wrap;
+
+gap:15px;
+
+padding:25px 15px;
+
+background:#0f0f0f;
+
 }
 
 .cat-btn{
-background:#111;
-color:#fff;
-padding:8px 12px;
-border-radius:20px;
+
+padding:12px 22px;
+
+background:#1b1b1b;
+
+border:2px solid #333;
+
+border-radius:30px;
+
 cursor:pointer;
-border:1px solid #333;
+
+font-weight:bold;
+
+transition:.3s;
+
 }
 
 .cat-btn:hover{
-background:#ffcc00;
-color:#000;
-}
-
 /* MENU */
+
 .menu{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-padding:20px;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+padding:40px 25px;
+
+background:#0b0b0b;
+
 }
 
 .card{
-background:#111;
-padding:15px;
-border-radius:10px;
-text-align:center;
+
+background:#161616;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+transition:.3s;
+
+border:1px solid #2b2b2b;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+border-color:#ffcc00;
+
 }
 
 .card img{
+
 width:100%;
-border-radius:10px;
-height:120px;
+
+height:190px;
+
 object-fit:cover;
+
+}
+
+.card h3{
+
+font-size:24px;
+
+padding:15px 15px 5px;
+
+}
+
+.card p{
+
+padding:0 15px;
+
+color:#ccc;
+
 }
 
 .price{
+
+padding:10px 15px;
+
+font-size:22px;
+
+font-weight:bold;
+
 color:#ffcc00;
-font-size:18px;
-margin:10px 0;
+
 }
 
-/* BUTTON */
-button{
-background:#ffcc00;
+.card button{
+
+margin:15px;
+
+width:calc(100% - 30px);
+
+padding:12px;
+
 border:none;
-padding:6px 10px;
-border-radius:5px;
-cursor:pointer;
+
+border-radius:10px;
+
+background:#ffcc00;
+
+font-size:16px;
+
 font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
 }
 
+.card button:hover{
 /* CART */
+
 .cart-btn{
+
 position:fixed;
+
 bottom:20px;
+
 right:20px;
+
 background:#ffcc00;
+
 color:#000;
-padding:12px 15px;
-border-radius:50px;
+
+padding:15px 20px;
+
+border-radius:40px;
+
 font-weight:bold;
+
 cursor:pointer;
-z-index:2000;
+
+box-shadow:0 5px 15px rgba(0,0,0,.4);
+
+z-index:999;
+
 }
 
 .cart{
+
 position:fixed;
+
 right:20px;
-bottom:80px;
-width:300px;
-background:#000;
+
+bottom:85px;
+
+width:320px;
+
+max-height:450px;
+
+overflow:auto;
+
+background:#111;
+
 border:1px solid #333;
-padding:15px;
-border-radius:10px;
+
+border-radius:15px;
+
+padding:20px;
+
 display:none;
+
 }
 
-.remove{
-background:red;
-color:#fff;
+footer{
+
+background:#000;
+
+padding:40px 20px;
+
+text-align:center;
+
+border-top:1px solid #222;
+
 }
 
-.small{
-font-size:12px;
+footer a{
+
+color:#ffcc00;
+
+margin:0 10px;
+
+font-weight:bold;
+
+}
+
+footer p{
+
+margin-top:15px;
+
 color:#aaa;
-}
-</style>
-</head>
 
-<body>
+}
+background:#fff;
+
+}
+background:#ffcc00;
+
+color:#000;
+
+border-color:#ffcc00;
+
+transform:translateY(-3px);
+
+}
+background:#fff;
+
+transform:scale(1.05);
+
+}
+color:#ffcc00;
+</style>
+
+</head>
+}<body>
 
 <header>
-<div class="logo">🍔 Neno Fast Food</div>
+
+<div class="logo">
+
+<img src="logo.png" alt="Neno Fast Food Logo">
+
+<span>Neno Fast Food</span>
+
+</div>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#menu">Menu</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
 </header>
 
-<!-- HERO -->
-<div class="hero">
-<h1>Welcome to <span>Neno Fast Food</span></h1>
-<p>Fresh Food • Fast Delivery • Best Taste</p>
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Fresh & Delicious Fast Food</h1>
+
+<p>Hot Burgers • Cheesy Pizza • Crispy Fries • Cold Drinks • Fast Delivery</p>
+
+<a href="#menu" class="btn">Order Now</a>
+
 </div>
 
-<!-- SEARCH -->
-<div class="search">
-<input type="text" id="searchBox" placeholder="Search food..." onkeyup="searchFood()">
-</div>
+</section>
 
-<!-- CATEGORY -->
-<div class="categories">
-<div class="cat-btn" onclick="filter('all')">All</div>
-<div class="cat-btn" onclick="filter('burger')">Burger</div>
-<div class="cat-btn" onclick="filter('pizza')">Pizza</div>
-<div class="cat-btn" onclick="filter('fries')">Fries</div>
-</div>
+<section class="search">
 
-<!-- MENU -->
-<div class="menu" id="menu">
+<input
+type="text"
+id="searchBox"
+placeholder="Search your favorite food..."
+onkeyup="searchFood()">
+
+</section>
+
+<section class="categories">
+
+<div class="cat-btn" onclick="filterMenu('all')">All</div>
+
+<div class="cat-btn" onclick="filterMenu('burger')">Burger</div>
+
+<div class="cat-btn" onclick="filterMenu('pizza')">Pizza</div>
+
+<div class="cat-btn" onclick="filterMenu('fries')">Fries</div>
+
+<div class="cat-btn" onclick="filterMenu('drinks')">Drinks</div>
+
+<div class="cat-btn" onclick="filterMenu('dessert')">Dessert</div>
+
+</section>
+
+<section class="menu" id="menu">
+  <div class="card" data-cat="burger">
+<img src="images/classic-burger.jpg" alt="Classic Burger">
+<h3>Classic Burger</h3>
+<p>Juicy grilled beef burger</p>
+<div class="price">$1.07</div>
+<button onclick="add('Classic Burger',1.07)">Add to Cart</button>
+</div>
 
 <div class="card" data-cat="burger">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
-<h3>Burger</h3>
-<p class="price">$1.07</p>
-<button onclick="add('Burger',1.07)">Add</button>
+<img src="images/cheese-burger.jpg" alt="Cheese Burger">
+<h3>Cheese Burger</h3>
+<p>Loaded with cheddar cheese</p>
+<div class="price">$1.49</div>
+<button onclick="add('Cheese Burger',1.49)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="burger">
+<img src="images/double-burger.jpg" alt="Double Burger">
+<h3>Double Burger</h3>
+<p>Double patty special</p>
+<div class="price">$2.49</div>
+<button onclick="add('Double Burger',2.49)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="burger">
+<img src="images/chicken-burger.jpg" alt="Chicken Burger">
+<h3>Chicken Burger</h3>
+<p>Crispy chicken burger</p>
+<div class="price">$1.79</div>
+<button onclick="add('Chicken Burger',1.79)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="burger">
+<img src="images/crispy-burger.jpg" alt="Crispy Burger">
+<h3>Crispy Burger</h3>
+<p>Extra crispy delight</p>
+<div class="price">$1.99</div>
+<button onclick="add('Crispy Burger',1.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="burger">
+<img src="images/veg-burger.jpg" alt="Veg Burger">
+<h3>Veg Burger</h3>
+<p>Fresh vegetable burger</p>
+<div class="price">$0.99</div>
+<button onclick="add('Veg Burger',0.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="burger">
+<img src="images/spicy-burger.jpg" alt="Spicy Burger">
+<h3>Spicy Burger</h3>
+<p>Hot & spicy flavor</p>
+<div class="price">$2.09</div>
+<button onclick="add('Spicy Burger',2.09)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="burger">
+<img src="images/bbq-burger.jpg" alt="BBQ Burger">
+<h3>BBQ Burger</h3>
+<p>BBQ sauce special</p>
+<div class="price">$2.49</div>
+<button onclick="add('BBQ Burger',2.49)">Add to Cart</button>
+</div>
+<div class="card" data-cat="pizza">
+<img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9" alt="Margherita Pizza">
+<h3>Margherita Pizza</h3>
+<p>Classic cheese pizza</p>
+<div class="price">$2.49</div>
+<button onclick="add('Margherita Pizza',2.49)">Add to Cart</button>
 </div>
 
 <div class="card" data-cat="pizza">
-<img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9">
-<h3>Pizza</h3>
-<p class="price">$1.79</p>
-<button onclick="add('Pizza',1.79)">Add</button>
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pepperoni Pizza">
+<h3>Pepperoni Pizza</h3>
+<p>Loaded with pepperoni</p>
+<div class="price">$3.49</div>
+<button onclick="add('Pepperoni Pizza',3.49)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="pizza">
+<img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="Veggie Pizza">
+<h3>Veggie Pizza</h3>
+<p>Fresh vegetable toppings</p>
+<div class="price">$2.99</div>
+<button onclick="add('Veggie Pizza',2.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="pizza">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Chicken Pizza">
+<h3>Chicken Pizza</h3>
+<p>Grilled chicken special</p>
+<div class="price">$3.99</div>
+<button onclick="add('Chicken Pizza',3.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="pizza">
+<img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c" alt="BBQ Pizza">
+<h3>BBQ Pizza</h3>
+<p>Smoky BBQ flavor</p>
+<div class="price">$4.29</div>
+<button onclick="add('BBQ Pizza',4.29)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="pizza">
+<img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002" alt="Cheese Burst Pizza">
+<h3>Cheese Burst Pizza</h3>
+<p>Extra cheese loaded</p>
+<div class="price">$4.49</div>
+<button onclick="add('Cheese Burst Pizza',4.49)">Add to Cart</button>
+</div>
+<!-- FRIES -->
+
+<div class="card" data-cat="fries">
+<img src="https://images.unsplash.com/photo-1576107232684-1279f390859f" alt="Regular Fries">
+<h3>Regular Fries</h3>
+<p>Golden crispy fries</p>
+<div class="price">$0.83</div>
+<button onclick="add('Regular Fries',0.83)">Add to Cart</button>
 </div>
 
 <div class="card" data-cat="fries">
-<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877">
-<h3>Fries</h3>
-<p class="price">$0.83</p>
-<button onclick="add('Fries',0.83)">Add</button>
+<img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d" alt="Cheese Fries">
+<h3>Cheese Fries</h3>
+<p>Loaded with cheese</p>
+<div class="price">$1.79</div>
+<button onclick="add('Cheese Fries',1.79)">Add to Cart</button>
 </div>
 
+<div class="card" data-cat="fries">
+<img src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752" alt="Peri Peri Fries">
+<h3>Peri Peri Fries</h3>
+<p>Spicy peri peri fries</p>
+<div class="price">$1.29</div>
+<button onclick="add('Peri Peri Fries',1.29)">Add to Cart</button>
 </div>
 
-<!-- CART BUTTON -->
+<div class="card" data-cat="fries">
+<img src="https://images.unsplash.com/photo-1585109649139-366815a0d713" alt="Loaded Fries">
+<h3>Loaded Fries</h3>
+<p>Fries with cheese & sauce</p>
+<div class="price">$2.29</div>
+<button onclick="add('Loaded Fries',2.29)">Add to Cart</button>
+</div>
+
+<!-- DRINKS -->
+
+<div class="card" data-cat="drinks">
+<img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e" alt="Coca Cola">
+<h3>Coca-Cola</h3>
+<p>Chilled soft drink</p>
+<div class="price">$0.99</div>
+<button onclick="add('Coca-Cola',0.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="drinks">
+<img src="https://images.unsplash.com/photo-1581006852262-e4307cf6283a" alt="Pepsi">
+<h3>Pepsi</h3>
+<p>Refreshing drink</p>
+<div class="price">$0.99</div>
+<button onclick="add('Pepsi',0.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="drinks">
+<img src="https://images.unsplash.com/photo-1554866585-cd94860890b7" alt="Sprite">
+<h3>Sprite</h3>
+<p>Lemon flavored drink</p>
+<div class="price">$0.99</div>
+<button onclick="add('Sprite',0.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="drinks">
+<img src="https://images.unsplash.com/photo-1629203432180-71e9b87f3f76" alt="Fanta">
+<h3>Fanta</h3>
+<p>Orange flavored drink</p>
+<div class="price">$0.99</div>
+<button onclick="add('Fanta',0.99)">Add to Cart</button>
+</div>
+<!-- WRAPS -->
+
+<div class="card" data-cat="wrap">
+<img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" alt="Chicken Wrap">
+<h3>Chicken Wrap</h3>
+<p>Grilled chicken wrap</p>
+<div class="price">$2.49</div>
+<button onclick="add('Chicken Wrap',2.49)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="wrap">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Veg Wrap">
+<h3>Veg Wrap</h3>
+<p>Fresh vegetable wrap</p>
+<div class="price">$1.99</div>
+<button onclick="add('Veg Wrap',1.99)">Add to Cart</button>
+</div>
+
+<!-- SANDWICHES -->
+
+<div class="card" data-cat="sandwich">
+<img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af" alt="Club Sandwich">
+<h3>Club Sandwich</h3>
+<p>Classic club sandwich</p>
+<div class="price">$2.99</div>
+<button onclick="add('Club Sandwich',2.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="sandwich">
+<img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543" alt="Grilled Sandwich">
+<h3>Grilled Sandwich</h3>
+<p>Cheesy grilled sandwich</p>
+<div class="price">$2.49</div>
+<button onclick="add('Grilled Sandwich',2.49)">Add to Cart</button>
+</div>
+
+<!-- DESSERTS -->
+
+<div class="card" data-cat="dessert">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="Chocolate Ice Cream">
+<h3>Chocolate Ice Cream</h3>
+<p>Rich chocolate ice cream</p>
+<div class="price">$1.49</div>
+<button onclick="add('Chocolate Ice Cream',1.49)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="dessert">
+<img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371" alt="Vanilla Ice Cream">
+<h3>Vanilla Ice Cream</h3>
+<p>Creamy vanilla scoop</p>
+<div class="price">$1.29</div>
+<button onclick="add('Vanilla Ice Cream',1.29)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="dessert">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c" alt="Brownie">
+<h3>Chocolate Brownie</h3>
+<p>Soft chocolate brownie</p>
+<div class="price">$1.99</div>
+<button onclick="add('Chocolate Brownie',1.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="dessert">
+<img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699" alt="Oreo Shake">
+<h3>Oreo Shake</h3>
+<p>Cold Oreo milkshake</p>
+<div class="price">$2.99</div>
+<button onclick="add('Oreo Shake',2.99)">Add to Cart</button>
+</div>
+<!-- HOT DOGS -->
+
+<div class="card" data-cat="hotdog">
+<img src="https://images.unsplash.com/photo-1612392062798-45d9eb2a4d6c" alt="Classic Hot Dog">
+<h3>Classic Hot Dog</h3>
+<p>Fresh hot dog with sauce</p>
+<div class="price">$2.19</div>
+<button onclick="add('Classic Hot Dog',2.19)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="hotdog">
+<img src="https://images.unsplash.com/photo-1550317138-10000687a72b" alt="Cheese Hot Dog">
+<h3>Cheese Hot Dog</h3>
+<p>Hot dog with melted cheese</p>
+<div class="price">$2.49</div>
+<button onclick="add('Cheese Hot Dog',2.49)">Add to Cart</button>
+</div>
+
+<!-- PASTA -->
+
+<div class="card" data-cat="pasta">
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9" alt="White Sauce Pasta">
+<h3>White Sauce Pasta</h3>
+<p>Creamy white sauce pasta</p>
+<div class="price">$3.49</div>
+<button onclick="add('White Sauce Pasta',3.49)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="pasta">
+<img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb" alt="Red Sauce Pasta">
+<h3>Red Sauce Pasta</h3>
+<p>Italian tomato pasta</p>
+<div class="price">$3.29</div>
+<button onclick="add('Red Sauce Pasta',3.29)">Add to Cart</button>
+</div>
+
+<!-- NUGGETS -->
+
+<div class="card" data-cat="nuggets">
+<img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92" alt="Chicken Nuggets">
+<h3>Chicken Nuggets</h3>
+<p>6 pcs crispy nuggets</p>
+<div class="price">$2.99</div>
+<button onclick="add('Chicken Nuggets',2.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="nuggets">
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Spicy Nuggets">
+<h3>Spicy Nuggets</h3>
+<p>Hot & crispy nuggets</p>
+<div class="price">$3.29</div>
+<button onclick="add('Spicy Nuggets',3.29)">Add to Cart</button>
+</div>
+
+<!-- COFFEE -->
+
+<div class="card" data-cat="coffee">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Hot Coffee">
+<h3>Hot Coffee</h3>
+<p>Fresh brewed coffee</p>
+<div class="price">$1.49</div>
+<button onclick="add('Hot Coffee',1.49)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="coffee">
+<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735" alt="Cold Coffee">
+<h3>Cold Coffee</h3>
+<p>Chilled creamy coffee</p>
+<div class="price">$2.29</div>
+<button onclick="add('Cold Coffee',2.29)">Add to Cart</button>
+</div>
+
+<!--
+  <!-- EXTRA DRINKS -->
+
+<div class="card" data-cat="drinks">
+<img src="https://images.unsplash.com/photo-1624517452488-04869289c4ca">
+<h3>Mineral Water</h3>
+<p>500ml Bottle</p>
+<div class="price">$0.59</div>
+<button onclick="add('Mineral Water',0.59)">Add to Cart</button>
+</div>
+
+<div class="card" data-cat="drinks">
+<img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97">
+<h3>Energy Drink</h3>
+<p>Energy Booster</p>
+<div class="price">$2.49</div>
+<button onclick="add('Energy Drink',2.49)">Add to Cart</button>
+</div>
+
+</section>
+<!-- ABOUT -->
+
+<section id="about" style="padding:60px 20px;background:#111;text-align:center;">
+
+<h2 style="color:#ffcc00;">About Neno Fast Food</h2>
+
+<p style="max-width:800px;margin:auto;line-height:1.8;color:#ddd;">
+
+Neno Fast Food serves delicious burgers, pizzas, fries, wraps, sandwiches, desserts and refreshing drinks. We focus on fresh ingredients, fast delivery and great taste at affordable prices.
+
+</p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" style="padding:60px 20px;text-align:center;">
+
+<h2 style="color:#ffcc00;">Contact Us</h2>
+
+<p>📍 431 W 16th St, New York, NY 10011, USA</p>
+
+<p>📧 love@nenofastfood.com</p>
+
+<p>📲 Telegram: @Cherryjohan</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 Neno Fast Food. All Rights Reserved.</p>
+
+<p>
+
+<a href="privacy.html">Privacy Policy</a> |
+
+<a href="terms.html">Terms & Conditions</a> |
+
+<a href="refund.html">Refund Policy</a>
+
+</p>
+
+</footer>
+
 <div class="cart-btn" onclick="toggleCart()">
+
 🛒 Cart (<span id="count">0</span>)
+
 </div>
 
-<!-- CART -->
 <div class="cart" id="cartBox">
-<h3>Your Order</h3>
-<div id="items"></div>
-<p>Total: $<span id="total">0</span></p>
-<button onclick="order()">Place Order</button>
-<p class="small">Order will go to WhatsApp</p>
-</div>
 
+<h3>Your Order</h3>
+
+<div id="items"></div>
+
+<p>Total: $<span id="total">0.00</span></p>
+
+<button onclick="order()">Place Order</button>
+
+</div>
 <script>
 
-let cart = [];
+let cart=[];
 
 function add(name,price){
-let item = cart.find(i=>i.name===name);
-if(item){ item.qty++; }
-else{ cart.push({name,price,qty:1}); }
-update();
+
+let item=cart.find(i=>i.name===name);
+
+if(item){
+
+item.qty++;
+
+}else{
+
+cart.push({name,price,qty:1});
+
 }
 
-function update(){
+updateCart();
 
-let items = document.getElementById("items");
-let total = 0;
-let count = 0;
+}
 
-items.innerHTML = "";
+function updateCart(){
+
+let items=document.getElementById("items");
+
+let total=0;
+
+let count=0;
+
+items.innerHTML="";
 
 cart.forEach(i=>{
-total += i.price*i.qty;
-count += i.qty;
 
-items.innerHTML += `
+total+=i.price*i.qty;
+
+count+=i.qty;
+
+items.innerHTML+=`
+
 <p>
-${i.name} x ${i.qty}
-<button class="remove" onclick="removeItem('${i.name}')">X</button>
-</p>`;
+
+${i.name} × ${i.qty}
+
+<button onclick="removeItem('${i.name}')">❌</button>
+
+</p>
+
+`;
+
 });
 
-document.getElementById("total").innerText = total.toFixed(2);
-document.getElementById("count").innerText = count;
+document.getElementById("total").innerText=total.toFixed(2);
+
+document.getElementById("count").innerText=count;
+
 }
 
 function removeItem(name){
-cart = cart.filter(i=>i.name!==name);
-update();
+
+cart=cart.filter(i=>i.name!==name);
+
+updateCart();
+
 }
 
 function toggleCart(){
-let box = document.getElementById("cartBox");
-box.style.display = box.style.display==="block"?"none":"block";
+
+let box=document.getElementById("cartBox");
+
+box.style.display=(box.style.display==="block")?"none":"block";
+
+}
+ function filterMenu(cat){
+
+document.querySelectorAll(".card").forEach(card=>{
+
+if(cat==="all" || card.dataset.cat===cat){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+function searchFood(){
+
+let value=document.getElementById("searchBox").value.toLowerCase();
+
+document.querySelectorAll(".card").forEach(card=>{
+
+let name=card.querySelector("h3").innerText.toLowerCase();
+
+card.style.display=name.includes(value)?"block":"none";
+
+});
+
 }
 
 function order(){
 
-let msg = "🍔 Order from Neno Fast Food:%0A%0A";
-let total = 0;
+if(cart.length===0){
+
+alert("Your cart is empty!");
+
+return;
+
+}
+
+let msg="🍔 Neno Fast Food Order%0A%0A";
+
+let total=0;
 
 cart.forEach(i=>{
-msg += `${i.name} x ${i.qty} = $${(i.price*i.qty).toFixed(2)}%0A`;
-total += i.price*i.qty;
+
+msg+=`${i.name} x ${i.qty} = $${(i.price*i.qty).toFixed(2)}%0A`;
+
+total+=i.price*i.qty;
+
 });
 
-msg += `%0ATotal: $${total.toFixed(2)}`;
+msg+=`%0ATotal: $${total.toFixed(2)}`;
+
+window.open("https://t.me/Cherryjohan","_blank");
 
 window.open("https://wa.me/919799765187?text="+msg,"_blank");
-}
 
-function filter(cat){
-let cards = document.querySelectorAll(".card");
-cards.forEach(c=>{
-c.style.display = (cat==="all" || c.dataset.cat===cat) ? "block":"none";
-});
-}
-
-function searchFood(){
-let val = document.getElementById("searchBox").value.toLowerCase();
-document.querySelectorAll(".card").forEach(c=>{
-let name = c.querySelector("h3").innerText.toLowerCase();
-c.style.display = name.includes(val) ? "block":"none";
-});
 }
 
 </script>
 
 </body>
-</html>
+
+</html> 
