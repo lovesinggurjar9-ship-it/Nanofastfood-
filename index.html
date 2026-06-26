@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neno Fast Food Pro</title>
-
-<link rel="icon" href="logo.png">
+<title>Neno Fast Food Ultimate</title>
 
 <style>
 body{
@@ -15,158 +13,116 @@ background:#0b0b0b;
 color:#fff;
 }
 
-/* HEADER */
 header{
 position:sticky;
 top:0;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 20px;
+padding:15px;
 background:#000;
-border-bottom:1px solid #222;
 z-index:1000;
 }
 
-.logo{
+.logo{color:#ffcc00;font-weight:bold;font-size:20px}
+
+.search{
+padding:8px;
+width:200px;
+border-radius:5px;
+border:none;
+}
+
+.menu-bar{
 display:flex;
-align-items:center;
 gap:10px;
-color:#ffcc00;
-font-weight:bold;
-font-size:20px;
+padding:10px;
+overflow:auto;
 }
 
-.logo img{height:45px}
-
-nav a{
-margin:0 10px;
-color:#fff;
-font-weight:bold;
-text-decoration:none;
+.cat{
+background:#222;
+padding:6px 12px;
+border-radius:20px;
+cursor:pointer;
+white-space:nowrap;
 }
 
-nav a:hover{color:#ffcc00}
+.cat.active{background:#ffcc00;color:#000}
 
-/* HERO */
-.hero{
-padding:60px 20px;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url("images/banner.jpg");
-background-size:cover;
-}
-
-.hero h1{
-font-size:40px;
-color:#ffcc00;
-}
-
-.hero p{color:#ddd}
-
-/* MENU GRID */
 .menu{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-padding:20px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:10px;
+padding:15px;
 }
 
 .card{
 background:#151515;
-border-radius:15px;
-overflow:hidden;
-border:1px solid #2a2a2a;
-transition:0.3s;
-}
-
-.card:hover{
-transform:scale(1.03);
-border-color:#ffcc00;
+padding:10px;
+border-radius:10px;
+border:1px solid #333;
 }
 
 .card img{
 width:100%;
-height:150px;
+height:120px;
 object-fit:cover;
+border-radius:8px;
 }
 
-.card h3{padding:10px;margin:0}
-.card p{padding:0 10px;color:#aaa}
+.price{color:#ffcc00;font-weight:bold}
 
-.price{
-padding:10px;
-color:#ffcc00;
-font-weight:bold;
-}
-
-.card button{
-width:100%;
-padding:10px;
+button{
 background:#ffcc00;
 border:none;
-font-weight:bold;
+padding:8px;
+width:100%;
 cursor:pointer;
+font-weight:bold;
 }
 
-/* CART BUTTON */
 .cart-btn{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#ffcc00;
 color:#000;
-padding:12px 18px;
+padding:12px;
 border-radius:30px;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
 }
 
-/* CART DRAWER */
 .cart{
 position:fixed;
-top:0;
 right:-350px;
+top:0;
 width:300px;
 height:100%;
 background:#111;
-border-left:1px solid #333;
 padding:15px;
 transition:0.3s;
-z-index:2000;
 }
 
-.cart.open{
-right:0;
-}
-
-.cart h2{
-color:#ffcc00;
-}
+.cart.open{right:0}
 
 .item{
 display:flex;
 justify-content:space-between;
+align-items:center;
 margin:10px 0;
 border-bottom:1px solid #222;
 padding-bottom:5px;
 }
 
-.close{
-background:red;
-color:#fff;
-border:none;
-padding:5px 8px;
-cursor:pointer;
+.item button{
+width:auto;
+padding:5px;
+margin:0 3px;
 }
 
 .checkout{
-width:100%;
-padding:10px;
-background:#ffcc00;
-border:none;
-font-weight:bold;
-cursor:pointer;
 margin-top:10px;
 }
 </style>
@@ -175,108 +131,145 @@ margin-top:10px;
 <body>
 
 <header>
-<div class="logo">
-<img src="logo.png">
-Neno Fast Food
-</div>
-
-<nav>
-<a href="#menu">Menu</a>
-<a href="#contact">Contact</a>
-</nav>
+<div class="logo">Neno Fast Food</div>
+<input class="search" id="search" placeholder="Search food...">
 </header>
 
-<section class="hero">
-<h1>Uber Eats Style Food Ordering</h1>
-<p>Fast Delivery • Fresh Food • Easy Ordering</p>
-</section>
+<div class="menu-bar" id="cats"></div>
 
-<section class="menu" id="menu">
-
-<div class="card">
-<img src="images/veg-burger.jpg">
-<h3>Veg Burger</h3>
-<p>Fresh & tasty</p>
-<div class="price">$1.00</div>
-<button onclick="add('Veg Burger',1)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/cheese-burger.jpg">
-<h3>Cheese Burger</h3>
-<p>Loaded cheese</p>
-<div class="price">$1.50</div>
-<button onclick="add('Cheese Burger',1.5)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="images/spicy-burger.jpg">
-<h3>Spicy Burger</h3>
-<p>Hot & spicy</p>
-<div class="price">$2.00</div>
-<button onclick="add('Spicy Burger',2)">Add to Cart</button>
-</div>
-
-</section>
+<section class="menu" id="menu"></section>
 
 <div class="cart-btn" onclick="toggleCart()">
-🛒 Cart (<span id="count">0</span>)
+🛒 (<span id="count">0</span>)
 </div>
 
 <div class="cart" id="cart">
-<h2>Your Cart</h2>
-<div id="items" style="max-height:60vh;overflow:auto;"></div>
+<h3>Your Cart</h3>
+<div id="items"></div>
 <p>Total: $<span id="total">0</span></p>
 <button class="checkout" onclick="order()">Checkout</button>
 </div>
 
 <script>
-let cart=[];
+let products = [
+{ id:1, name:"Veg Burger", price:1, cat:"Burger", image:"images/veg.jpg" },
+{ id:2, name:"Cheese Burger", price:1.5, cat:"Burger", image:"images/cheese.jpg" },
+{ id:3, name:"Pepper Pizza", price:2.5, cat:"Pizza", image:"images/pizza.jpg" },
+{ id:4, name:"Cold Drink", price:0.8, cat:"Drinks", image:"images/drink.jpg" }
+];
 
-function add(name,price){
-let item=cart.find(i=>i.name===name);
-if(item){item.qty++}
-else{cart.push({name,price,qty:1})}
-update()
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let currentCat = "All";
+
+function init(){
+renderCats();
+renderMenu();
+updateCart();
 }
 
-function update(){
-let items=document.getElementById("items");
-items.innerHTML="";
-let total=0;
-let count=0;
+function renderCats(){
+let cats = ["All", ...new Set(products.map(p=>p.cat))];
+document.getElementById("cats").innerHTML =
+cats.map(c=>`<div class="cat ${c==currentCat?'active':''}" onclick="setCat('${c}')">${c}</div>`).join("");
+}
+
+function setCat(c){
+currentCat = c;
+renderCats();
+renderMenu();
+}
+
+function renderMenu(){
+let menu = document.getElementById("menu");
+let search = document.getElementById("search").value.toLowerCase();
+
+menu.innerHTML = "";
+
+products
+.filter(p => currentCat=="All" || p.cat==currentCat)
+.filter(p => p.name.toLowerCase().includes(search))
+.forEach(p=>{
+menu.innerHTML += `
+<div class="card">
+<img src="${p.image}">
+<h4>${p.name}</h4>
+<div class="price">$${p.price}</div>
+<button onclick="add(${p.id})">Add</button>
+</div>
+`;
+});
+}
+
+document.getElementById("search").addEventListener("input",renderMenu);
+
+function add(id){
+let item = cart.find(i=>i.id==id);
+if(item) item.qty++;
+else {
+let p = products.find(x=>x.id==id);
+cart.push({...p,qty:1});
+}
+save();
+updateCart();
+}
+
+function change(id,val){
+let item = cart.find(i=>i.id==id);
+item.qty += val;
+if(item.qty<=0) cart = cart.filter(i=>i.id!=id);
+save();
+updateCart();
+}
+
+function updateCart(){
+let items = document.getElementById("items");
+items.innerHTML = "";
+let total=0,count=0;
 
 cart.forEach(i=>{
-total+=i.price*i.qty;
-count+=i.qty;
+total += i.price*i.qty;
+count += i.qty;
 
-items.innerHTML+=`
+items.innerHTML += `
 <div class="item">
 <span>${i.name} x ${i.qty}</span>
-<button onclick="removeItem('${i.name}')">x</button>
-</div>`;
+<div>
+<button onclick="change(${i.id},-1)">-</button>
+<button onclick="change(${i.id},1)">+</button>
+</div>
+</div>
+`;
 });
 
-document.getElementById("total").innerText=total.toFixed(2);
-document.getElementById("count").innerText=count;
-}
-
-function removeItem(name){
-cart=cart.filter(i=>i.name!==name);
-update();
+document.getElementById("total").innerText = total.toFixed(2);
+document.getElementById("count").innerText = count;
 }
 
 function toggleCart(){
 document.getElementById("cart").classList.toggle("open");
 }
 
+function save(){
+localStorage.setItem("cart",JSON.stringify(cart));
+}
+
 function order(){
-let msg="Order:%0A";
+if(cart.length==0){alert("Cart empty");return;}
+
+let msg="🛒 Order:%0A";
+let total=0;
+
 cart.forEach(i=>{
-msg+=`${i.name} x ${i.qty}%0A`;
+msg += `${i.name} x ${i.qty} = $${i.price*i.qty}%0A`;
+total += i.price*i.qty;
 });
+
+msg += "%0A💰 Total: $"+total;
+
 window.open("https://wa.me/919799765187?text="+msg);
 }
+
+init();
 </script>
 
 </body>
