@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neno Fast Food</title>
-<link rel="icon" href="logo.png?v=2">
+<link rel="icon" href="logo.png?v=3">
+
 <style>
 body{
 margin:0;
@@ -13,6 +14,7 @@ background:#0b0b0b;
 color:#fff;
 }
 
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -28,9 +30,6 @@ z-index:1000;
 display:flex;
 align-items:center;
 gap:10px;
-font-size:20px;
-font-weight:bold;
-color:#ffcc00;
 }
 
 nav a{
@@ -44,6 +43,7 @@ nav a:hover{
 color:#ffcc00;
 }
 
+/* BUTTON */
 .btn{
 background:#ffcc00;
 color:#000;
@@ -53,13 +53,21 @@ text-decoration:none;
 font-weight:bold;
 }
 
+/* HERO */
 .hero{
 display:flex;
-justify-content:space-between;
+justify-content:center;
 align-items:center;
-padding:120px 50px;
-min-height:500px;
+text-align:center;
+padding:100px 20px;
+min-height:450px;
 background:url('images/banner.jpg') center/cover no-repeat;
+}
+
+.hero-text{
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:15px;
 }
 
 .hero-text h1{
@@ -68,18 +76,16 @@ margin:0;
 }
 
 .hero-text span{
-color:red;
+color:#ffcc00;
 }
-.hero-text{
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:15px;
-}
+
+/* SECTION */
 .section{
 padding:50px 20px;
 text-align:center;
 }
 
+/* MENU */
 .menu{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -100,6 +106,7 @@ border-radius:10px;
 .price{
 color:#ffcc00;
 font-weight:bold;
+font-size:18px;
 }
 
 .btn2{
@@ -112,12 +119,21 @@ border-radius:5px;
 text-decoration:none;
 }
 
-.about, .reviews{
+/* ABOUT */
+.about{
 background:#111;
 padding:40px;
 margin-top:20px;
 }
 
+/* CONTACT */
+.contact{
+background:#111;
+padding:40px;
+margin-top:20px;
+}
+
+/* FOOTER */
 .footer{
 background:#000;
 padding:30px;
@@ -138,6 +154,7 @@ font-size:12px;
 color:#aaa;
 }
 
+/* MAP */
 .map iframe{
 width:100%;
 height:250px;
@@ -149,10 +166,12 @@ border-radius:10px;
 
 <body>
 
+<!-- HEADER -->
 <header>
 <div class="logo">
 <img src="logo.png?v=3" alt="Neno Fast Food Logo" style="height:60px;">
 </div>
+
 <nav>
 <a href="#">Home</a>
 <a href="#menu">Menu</a>
@@ -160,17 +179,18 @@ border-radius:10px;
 <a href="#contact">Contact</a>
 </nav>
 
-
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-text">
 <h1>Welcome to <span>Neno Fast Food</span></h1>
 <p>Fresh Food • Fast Delivery • Best Taste</p>
-<a class="btn" href="https://wa.me/919799765187">Order Now</a>
+<a class="btn" href="https://wa.me/919799765187?text=I%20want%20to%20order%20food">Order Now</a>
 </div>
 </section>
 
+<!-- MENU -->
 <section id="menu" class="section">
 <h2>Popular Menu</h2>
 
@@ -178,36 +198,39 @@ border-radius:10px;
 
 <div class="card">
 <h3>Burger</h3>
-<p class="price">₹89</p>
-<a class="btn2" href="https://wa.me/919799765187">Order</a>
+<p class="price">$1.07</p>
+<a class="btn2" href="https://wa.me/919799765187?text=I%20want%20Burger">Order</a>
 </div>
 
 <div class="card">
 <h3>Pizza</h3>
-<p class="price">₹149</p>
-<a class="btn2" href="https://wa.me/919799765187">Order</a>
+<p class="price">$1.79</p>
+<a class="btn2" href="https://wa.me/919799765187?text=I%20want%20Pizza">Order</a>
 </div>
 
 <div class="card">
 <h3>Fries</h3>
-<p class="price">₹69</p>
-<a class="btn2" href="https://wa.me/919799765187">Order</a>
+<p class="price">$0.83</p>
+<a class="btn2" href="https://wa.me/919799765187?text=I%20want%20Fries">Order</a>
 </div>
 
 </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="about">
 <h2>About Us</h2>
 <p>We serve fresh, tasty and fast food made with love.</p>
 </section>
 
+<!-- MAP -->
 <section class="section map">
 <h2>Our Location</h2>
 <iframe src="https://maps.google.com/maps?q=431%20W%2016th%20St%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
-<section id="contact" class="reviews">
+<!-- CONTACT -->
+<section id="contact" class="contact">
 <h2>Contact</h2>
 <p>📞 +91 97997 65187</p>
 <p>📩 love@nenofastfood.com</p>
@@ -215,6 +238,7 @@ border-radius:10px;
 <p>📢 Telegram: <a href="https://t.me/Cherryjohan" target="_blank">@Cherryjohan</a></p>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
 
 <div>
